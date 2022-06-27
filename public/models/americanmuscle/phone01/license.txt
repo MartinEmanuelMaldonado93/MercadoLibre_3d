@@ -1,0 +1,11 @@
+Model Information:
+* title:	phone
+* source:	https://sketchfab.com/3d-models/phone-ef63b1bf46394bc09389367e82af0742
+* author:	K Wang (https://sketchfab.com/15716533192)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "phone" (https://sketchfab.com/3d-models/phone-ef63b1bf46394bc09389367e82af0742) by K Wang (https://sketchfab.com/15716533192) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

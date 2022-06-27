@@ -1,0 +1,52 @@
+@use './Component.scss'; 
+
+.payment_container { 
+    flex:1 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;  
+    box-sizing: border-box; 
+    // padding:.5rem; 
+    border-radius: 5px;
+    background-color: white;
+    // background-color: red;
+    box-shadow: Component.$btn_box-shadow;
+    
+    div { 
+        display: flex;
+        align-items: center;
+        gap: .8rem; 
+        padding:3px;
+        color:black;
+        font-weight: 400; 
+        font-size: 1.1rem;
+        .payment_icon { 
+            color: Component.$text-color-mp;
+            font-size: 1.7rem;
+            padding:1rem;
+            border-radius: 50%; 
+            border: Component.$transparent-border;
+        }
+    }
+    p{ 
+        a { 
+            display: block;
+            font-size: .8rem;
+            color: Component.$text-color-mp;
+        } 
+    }
+    .plus_icon {
+        // background-color: red;
+        border-left: Component.$transparent-border;
+        width: 8rem;
+        color: Component.$text-color-mp;
+        font-size: 1rem;
+        justify-content: center;
+        :first-child {
+            border-radius: 50%;
+            border: Component.$transparent-border;
+            padding:1rem; 
+        }
+    }
+}

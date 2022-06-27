@@ -1,0 +1,38 @@
+@use 'normalize.css'; 
+
+body {
+    font-family: -apple-system,  Ubuntu, Cantarell, sans-serif; 
+}
+
+$primary-yellow: #fff159; 
+$bg-page: #ebebeb;  
+$text-color-mp: #3483fa;
+$text-color: rgb(64, 63, 63); 
+$envios:#00a650;
+$color_botones: rgba(255, 255, 255, 0.839);
+$text-color-input: lightgray;
+$btn_box-shadow: 2px 2px 2px gray;
+$input_box-shadow: 1px 1px 2px gray;
+$transparent-border: 1px solid rgb(222, 222, 222);
+
+@mixin body_boundaries {
+    display: flex;
+    justify-content: space-around;    
+    align-items: center; 
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+@mixin ButtonStyle {
+    user-select: none;
+    border:none;
+    background-color: rgb(41, 129, 237);
+    border-radius: 10px;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    transition: .7s;  
+    &:hover {
+        background-color: rgb(25, 77, 140);
+    }
+}

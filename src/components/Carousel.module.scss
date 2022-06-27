@@ -1,0 +1,42 @@
+
+$amountOfPictures: 3; 
+
+.slider {  
+    max-width: 1630px;
+    height: 100%;
+    overflow: hidden;  
+
+    .slider__items {  
+        li {
+            img {
+                // margin-left: 10%;
+                width: 1390px; 
+            }
+        } 
+        display: flex; 
+        width: calc(100% * $amountOfPictures); 
+         
+        animation: swap 20s infinite;  
+        height: 100%;    
+        
+    } 
+}
+
+.img__banner { 
+    height: 100%; 
+}
+
+@keyframes swap { 
+    
+    0%  { margin-left: 10%; } 
+    20% { margin-left: 10%; } 
+
+    25% { margin-left: -77%; } 
+    45% { margin-left: -77%; } 
+
+    50% { margin-left: -163%; } 
+    70% { margin-left: -163%; } 
+
+    75% { margin-left: -250%; } 
+    100% { margin-left: -250%; } 
+}

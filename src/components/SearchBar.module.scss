@@ -1,0 +1,79 @@
+@use './Component.scss';
+
+$nav_height:4.1rem;
+$searchbar_height: .4rem;  
+
+.navbar {
+    background-color: Component.$primary-yellow;
+    width: 100%;   
+}
+
+.navbar__boundaries {
+    // border:1px dotted black;
+    @include Component.boundaries;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1rem;
+}
+
+.navbar__logo {
+    // border: 1px solid red;     
+    object-fit: cover;
+    height: 100%;
+    width: 7rem;
+}
+.navbar__form_searchbar {  
+    // border: 2px solid salmon;
+    flex-grow: 1; 
+    
+    input[type='text'] {  
+        outline: none;
+        min-width: 80%; 
+        border: none; 
+        border-radius: .1em; 
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+        box-shadow:1px 1px 2px gray; 
+    } 
+    input::placeholder{
+        color: Component.$text-color-input;
+    }
+    .navbar__button_search {
+        // border:1px solid green; 
+        border-style: none;
+        border-radius: 0 .1rem ; 
+        font-size: 1rem;
+        padding: 0.68rem 1rem;
+        color: rgb(128, 128, 128);
+        box-shadow: 1px 1px 2px gray;
+        background-color: white;
+        ::before { 
+            content: '';
+            display: block;
+            height: 26px;
+            border-left: 2px solid gray;
+            position: absolute;
+            top: 6.5px;
+        } 
+    } 
+}
+.navbar__banner {    
+    text-decoration: none;
+    display: flex;
+    align-items: center;  
+
+    img { 
+        object-fit: cover;
+        width: 4.1rem; 
+    }
+    p { 
+        color: black; 
+        font-size: 1rem;
+        font-weight: 400; 
+        span { 
+            font-weight: 600;
+            padding-left: 7px;
+        }
+    } 
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Multiversus Finn
+* source:	https://sketchfab.com/3d-models/multiversus-finn-93293943511741f0883d074e6d3043ce
+* author:	YaBoiPete23 (https://sketchfab.com/YaBoiPete23)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Multiversus Finn" (https://sketchfab.com/3d-models/multiversus-finn-93293943511741f0883d074e6d3043ce) by YaBoiPete23 (https://sketchfab.com/YaBoiPete23) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

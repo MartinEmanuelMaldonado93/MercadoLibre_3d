@@ -1,0 +1,11 @@
+Model Information:
+* title:	Electro Guitar
+* source:	https://sketchfab.com/3d-models/electro-guitar-5ea4637115be4d5b99e5466c6e4e6d17
+* author:	javaxme (https://sketchfab.com/javaxme)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Electro Guitar" (https://sketchfab.com/3d-models/electro-guitar-5ea4637115be4d5b99e5466c6e4e6d17) by javaxme (https://sketchfab.com/javaxme) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
