@@ -1,8 +1,6 @@
 import React from 'react' 
 import './BannerSuscription.scss';
-
-
-
+ 
 function BannerSuscription() {
   return (
     <div className='banner-container'>

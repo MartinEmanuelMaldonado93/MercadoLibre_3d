@@ -16,7 +16,7 @@ const enviroments = [
   'hdrs/provence_studio_1k.hdr'];
 
 interface props {
-  children: React.ReactNode
+  children: React.ReactNode,
   nextPage: string,
 }
 
