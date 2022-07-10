@@ -9,7 +9,7 @@ import MountainBike from '../3dComponents/MountainBike';
 import GamingChair1 from '../3dComponents/GamingChair1'; 
 
 //performance={{ max: 0.3 }} gl={{ antialias: false }}
-
+ 
 export default function CardMeta() {
   return (
     <div className={style.card_container}>
