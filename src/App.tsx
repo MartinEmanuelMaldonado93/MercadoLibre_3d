@@ -10,7 +10,8 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Page00" element={<Page00 />} /> 
-      <Route path="/Page00/Page01" element={<Page01 />} />
+      {/* <Route path="/Page00/Page01" element={<Page01 />} /> */}
+      
     </Routes>
   );
 }

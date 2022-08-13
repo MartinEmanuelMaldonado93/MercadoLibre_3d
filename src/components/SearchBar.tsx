@@ -13,9 +13,9 @@ export default function SearchBar( ) {
       <form className={style.navbar__form_searchbar}> 
         <input type={'text'} 
           placeholder={"Buscar productos, marcas y  más..."}/>
-        <button className={style.navbar__button_search}>
+        <div className={style.navbar__button_search} >
           <FaSistrix />   
-        </button> 
+        </div> 
       </form>
 
       <a className={style.navbar__banner} href="#">

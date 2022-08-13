@@ -110,14 +110,14 @@ function ShowProduct3d({ children, nextPage }: props) {
           </div>
         </div>
         {/* bton siguiente */}
-        <div className="container-next">
+        {/* <div className="container-next">
           <div className='btn-next'>
             <Link style={{ textDecoration: 'none', color: 'inherit' }}
               to={nextPage} target='_blank'>
               Siguiente demo
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <footer className='footer'>
           <h6>**Disclaimer**
