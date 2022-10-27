@@ -26,7 +26,7 @@ export default function CardMeta() {
       </div>
 
       <div className={style.three_model} >
-<Suspense>
+      <Suspense fallback= { <h1>Loading...✨</h1>}>
         <Canvas camera={{ position: [0, 0.5, 12],
             fov: 45, near: 0.1, far: 100 }} >
 
@@ -61,8 +61,7 @@ export default function CardMeta() {
             enableZoom={true}
             enablePan={true} />
         </Canvas>
-
-</Suspense>
+      </Suspense>
       </div>
     </div>
   )
