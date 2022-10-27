@@ -1,13 +1,12 @@
 import React from 'react';
-import './Home.scss';
+import '../styles/components_scss/Home.scss';
 // Components
-import NavBarMenu from "./components/NavBarMenu";
-import Carousel from "./components/Carousel";
-import CardPrice from "./components/CardPrice";
-import CardMeta from "./components/CardMeta";
-import Payments from "./components/Payments";
-import BannerSuscription from "./components/BannerSuscription";
-
+import NavBarMenu from "./NavBarMenu";
+import Carousel from "./Carousel";
+import CardPrice from "./CardPrice";
+import CardMeta from "./CardMeta";
+import Payments from "./Payments";
+import BannerSuscription from "./BannerSuscription";
 
 function Home() {
   return (

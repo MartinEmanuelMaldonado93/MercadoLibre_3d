@@ -1,30 +1,9 @@
 {
   "name": "test_fiber3js",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@react-three/drei": "^9.11.2",
-    "@react-three/fiber": "^8.0.19",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.1",
-    "@types/react-dom": "^18.0.5",
-    "@types/react-router-dom": "^5.3.3",
-    "react": "^18.1.0",
-    "react-colorful": "^5.5.1",
-    "react-dom": "^18.1.0",
-    "react-icons": "^4.3.1",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.52.1",
-    "styled-components": "^5.3.5",
-    "three": "^0.140.2",
-    "valtio": "^1.6.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
+  "private": true, 
+    "scripts": {
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -47,15 +26,31 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {  
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1", 
+    "react-router-dom": "^6.3.0"
+  },
   "devDependencies": {
+    "react-scripts": "5.0.1" ,   
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-router-dom": "^5.3.3",
+    "@react-three/drei": "^9.11.2",
     "@types/node": "^17.0.35",
     "@types/node-sass": "^4.11.2",
-    "@types/react": "^18.0.9",
     "@types/styled-components": "^5.1.25",
     "@types/three": "^0.140.0",
-    "eslint": "^8.16.0",
-    "eslint-plugin-react": "^7.30.0",
+    "@react-three/fiber": "^8.0.19",
     "typescript": "^4.7.2",
-    "typescript-plugin-css-modules": "^3.4.0"
+    "typescript-plugin-css-modules": "^3.4.0",
+    "styled-components": "^5.3.5",
+    "react-colorful": "^5.5.1",
+    "valtio": "^1.6.1",
+    "three": "^0.140.2",
+    "sass": "^1.52.1",
+    "eslint": "^8.16.0",
+    "eslint-plugin-react": "^7.30.0"
   }
 }

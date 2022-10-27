@@ -1,5 +1,5 @@
 import React from 'react' 
-import style from './MenuList.module.scss';
+import style from '../styles/components_scss/MenuList.module.scss';
 import { FaMapMarkerAlt,FaUserCircle,FaBell,FaShoppingCart } from "react-icons/fa";
 
 

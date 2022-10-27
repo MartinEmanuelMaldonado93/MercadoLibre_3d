@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import {Canvas  } from '@react-three/fiber';
 import {Environment,OrbitControls, Float } from "@react-three/drei";  
-import CamaraVintage from '../3dComponents/CameraVintage'
 import Caterpillar from '../3dComponents/Caterpillar';
 
 

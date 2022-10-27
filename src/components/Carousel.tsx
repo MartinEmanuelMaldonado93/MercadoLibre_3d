@@ -1,5 +1,5 @@
 import React  from "react";
-import style from './Carousel.module.scss';
+import style from '../styles/components_scss/Carousel.module.scss';
 
 
 export default function Carousel( ) {

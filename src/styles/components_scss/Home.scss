@@ -1,4 +1,4 @@
-@use "./styles/Global.scss";
+@use "../Global" as Global;
 
 .main-page {
   background-color: Global.$bg-page;

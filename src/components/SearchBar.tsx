@@ -1,5 +1,5 @@
 import React  from "react";
-import style from './SearchBar.module.scss';
+import style from '../styles/components_scss/SearchBar.module.scss';
 import { FaSistrix } from "react-icons/fa";
 
 

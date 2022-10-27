@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './CardMeta.module.scss';
+import style from '../styles/components_scss/CardMeta.module.scss';
 import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls, Float, Sparkles } from "@react-three/drei";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Iphone13 from '../3dComponents/Iphone13';
 import MountainBike from '../3dComponents/MountainBike';
 import GamingChair1 from '../3dComponents/GamingChair1'; 
-
+import { Suspense } from 'react';
 //performance={{ max: 0.3 }} gl={{ antialias: false }}
  
 export default function CardMeta() {
@@ -26,7 +26,7 @@ export default function CardMeta() {
       </div>
 
       <div className={style.three_model} >
-
+<Suspense>
         <Canvas camera={{ position: [0, 0.5, 12],
             fov: 45, near: 0.1, far: 100 }} >
 
@@ -61,6 +61,8 @@ export default function CardMeta() {
             enableZoom={true}
             enablePan={true} />
         </Canvas>
+
+</Suspense>
       </div>
     </div>
   )

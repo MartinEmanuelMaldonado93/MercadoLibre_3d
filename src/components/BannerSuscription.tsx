@@ -1,5 +1,5 @@
 import React from 'react' 
-import './BannerSuscription.scss';
+import '../styles/components_scss/BannerSuscription.scss';
  
 function BannerSuscription() {
   return (

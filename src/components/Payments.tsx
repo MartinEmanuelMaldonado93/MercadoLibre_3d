@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Payments.module.scss';
+import style from '../styles/components_scss/Payments.module.scss';
 import {FaRegCreditCard,FaCcMastercard,FaHandHoldingUsd,
     FaMoneyBillWave} from "react-icons/fa";
 

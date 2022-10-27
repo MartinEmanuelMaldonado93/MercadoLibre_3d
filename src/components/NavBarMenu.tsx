@@ -10,6 +10,6 @@ function NavBarMenu() {
         <NavMenuList/>
     </div>
   );
-};
+}
 
-export default NavBarMenu
+export default NavBarMenu;
