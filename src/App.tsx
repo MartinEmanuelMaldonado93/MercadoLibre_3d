@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Page00 from "./pages/Page00";
 
 

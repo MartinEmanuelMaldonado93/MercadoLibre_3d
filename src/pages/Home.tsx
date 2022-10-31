@@ -1,16 +1,17 @@
 import React from 'react';
 import '../styles/components_scss/Home.scss';
 // Components
-import NavBarMenu from "./NavBarMenu";
-import Carousel from "./Carousel";
-import CardPrice from "./CardPrice";
-import CardMeta from "./CardMeta";
-import Payments from "./Payments";
-import BannerSuscription from "./BannerSuscription";
+import NavBarMenu from "../components/NavBarMenu";
+import Carousel from "../components/Carousel";
+import CardPrice from "../components/CardPrice";
+import CardMeta from "../components/CardMeta";
+import Payments from "../components/Payments";
+import BannerSuscription from "../components/BannerSuscription/BannerSuscription";
 
 function Home() {
   return (
     <div className="main-page">
+      <div> disasster </div>
       <NavBarMenu />
       <div className="body-page">
         <Carousel />
