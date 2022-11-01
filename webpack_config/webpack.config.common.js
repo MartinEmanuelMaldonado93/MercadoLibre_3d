@@ -5,19 +5,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: {
-    app: "../src/index.tsx"
+    meli: "../pages/index.tsx"
   },
-  context: path.resolve(__dirname),
   output: {
-    path: path.resolve(__dirname, "/build"),
-    filename: "main.js",
+    path: path.join(__dirname, "../build"),
+    filename: "[name].[contenthash].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
-    publicPath: "../public",
+    publicPath: "",
   },
+  context: path.resolve(__dirname),
   module: {
     rules: [
-      // TS JS
       {
         test: /\.(js|tsx?)$/,
         use: "swc-loader",
@@ -55,9 +54,12 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "../src/index.html" })], 
+  plugins: [new HtmlWebpackPlugin({ template: "../public/index.html" })],
   resolve: {
-    extensions: [".tsx",".ts",".js", ".json"],
+    extensions: [".tsx", ".ts", ".js", ".json"],
+    alias: {
+      "gs": path.resolve(__dirname, "../src/global_sass")//relative where they're used
+    }
   },
   performance: {
     maxAssetSize: 500_000,

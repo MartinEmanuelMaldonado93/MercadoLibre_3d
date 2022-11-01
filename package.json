@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server -c ./webpack_config/webpack.config.dev.js",
+    "dev": "webpack serve -c ./webpack_config/webpack.config.dev.js",
     "build": "webpack -c ./webpack_config/webpack.config.prod.js"
   },
   "dependencies": {

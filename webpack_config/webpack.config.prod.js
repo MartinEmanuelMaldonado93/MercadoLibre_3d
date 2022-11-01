@@ -6,9 +6,6 @@ const speedMeasure = require("speed-measure-webpack-plugin");
 /** @type {import('webpack').Configuration} */
 const PROD_CONFIG = {
   mode: "production",
-  output: {
-    filename: "[name].[contenthash].js",
-  },
   optimization: {
     splitChunks: {
         chunks: "all",

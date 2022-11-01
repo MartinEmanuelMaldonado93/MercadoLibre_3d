@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import {Canvas  } from '@react-three/fiber';
-import {Environment,OrbitControls, Float } from "@react-three/drei";  
-import Caterpillar from '../3dComponents/Caterpillar';
+import {Environment,OrbitControls, Float } from "@react-three/drei";
+import Skull from  '../../3dComponents/Skull';    
 
 
 interface props {
@@ -9,12 +9,11 @@ interface props {
   activarfondo:boolean,
 }
 
-/* @params Camara vintage */
-export default function CanvasProduct01( {fondo,activarfondo}:props ) {
+function CanvasProduct02( {fondo,activarfondo}:props ) {
   return (
     <Canvas id='MyCanvas' 
     style={{ 
-    border:'1px dotted lightgray', 
+    // border:'1px dotted lightgray', 
     borderRadius:'1rem',
     background:'white',
     position:'relative', 
@@ -25,12 +24,8 @@ export default function CanvasProduct01( {fondo,activarfondo}:props ) {
         <ambientLight intensity={0.7} />
         <pointLight position={[-5,-5,-5]} intensity={4} />
         <pointLight position={[ 3, 3, -5]}/>
-
-        <Suspense  >    
-          {/* <CamaraVintage /> */}
-          <Caterpillar />
-
-        </Suspense> 
+    
+            <Skull position={[0, 0, -2]} scale={5}/>  
 
         <Environment ground background={activarfondo} files={fondo} /> 
         <OrbitControls 
@@ -38,8 +33,10 @@ export default function CanvasProduct01( {fondo,activarfondo}:props ) {
         maxDistance={16} 
         enableDamping={true}
         enableZoom={true} 
-        enablePan={false} 
+        enablePan={true} 
         />
     </Canvas>
   )
-} 
+}
+
+export default CanvasProduct02;

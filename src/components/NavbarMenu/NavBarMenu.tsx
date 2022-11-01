@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchBar from './SearchBar'; 
-import NavMenuList from './MenuList';
+import NavMenuList from '../Asides/AsideMenu';
 import './NavBarMenu';
 
 function NavBarMenu() {

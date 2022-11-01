@@ -7,21 +7,28 @@ const webpack = require("webpack");
 /** @type {import('webpack').Configuration} */
 const DEV_CONFIG = {
   mode: "development",
-  stats: {
-    loggingDebug: ["sass-loader"],
+  output: {
+    filename: '[name].bundle.js',
+    // path: path.resolve(__dirname, "../build"),
+    clean: true,
   },
-  /** @type {import('webpack-dev-server').Configuration} */
-  devServer: {
+   /** @type {import('webpack-dev-server').Configuration} */
+   devServer: {
     port: 9000,
-    allowedHosts: path.join(__dirname, "./dist"),
-    static: {
-      directory: path.join(__dirname, "./dist"),
-    },
-    // open: false, // open tab when run server
+    // static: {
+    //   directory: path.join(__dirname, "./"),
+    // },
     hot: true,
   },
   cache: true,
   devtool: "eval-source-map", // "eval" more performant but with some cons
+  target: "web",
+  optimization: {
+    runtimeChunk: 'single',
+  },
+  stats: {
+    loggingDebug: ["sass-loader"],
+  },
 };
 
 const development = merge(common, DEV_CONFIG);

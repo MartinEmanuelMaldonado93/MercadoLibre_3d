@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 // import '../styles/Global.scss';
-import '../styles/components3d_scss/ShowProduct3d.scss';
+import '../components/styles/components3d_scss/ShowProduct3d.scss';
 // Components
-import NavBarMenu from '../components/NavBarMenu';
-import CanvasProduct from '../components/CanvasProduct';
+import NavBarMenu from '../components/NavbarMenu/NavBarMenu';
+import CanvasProduct from '../components/Show3Dproduct/CanvasProduct';
 import { FaShippingFast, FaStar, FaUndo } from 'react-icons/fa';
 
 const enviroments = [

@@ -1,0 +1,63 @@
+@use "gs/global" as g;
+
+/*todo : implement bem */
+.home {
+  background-color: g.$bg-page;
+  max-width: 700px;
+  &__picture {
+    img {
+      width: 100%;
+      // box-sizing: border-box;
+      // object-fit: contain;
+    }
+  }
+}
+
+// .body-page {
+//   @include Global.body_boundaries;
+//   display: flex;
+//   flex-direction: column;
+//   place-items: center;
+//   align-content: space-around;
+//   gap: 3rem;
+// }
+
+// .ultima-vista {
+//   box-sizing: border-box;
+//   font-size: 2rem;
+//   font-weight: 100;
+//   padding: 0.5rem 0;
+//   width: 100%;
+
+//   .historial {
+//     color: Global.$text-color;
+//     display: flex;
+//     align-items: center;
+//     gap: 2rem;
+
+//     a {
+//       font-size: 1.5rem;
+//       text-decoration: none;
+//     }
+//   }
+// }
+// .product-cards {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
+// .product-cards01 {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
+// .footer {
+//   width: 100%;
+//   background-color: Global.$bg-page;
+//   .footer__content {
+//     @include Global.body_boundaries;
+//     background-color: white;
+//     flex-direction: column;
+//     justify-content: center;
+//   }
+// }
