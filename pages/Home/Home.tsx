@@ -1,12 +1,17 @@
 import React from "react";
 import "./Home.scss";
+import { Navbar, Carousel, CardProduct, ContainerCardProduct } from "@components";
 
 function Home() {
   return <div className="home">
-    {/* navbar */}
-    {/* carrousel */}
-    {/* products */}
-
+    <Navbar />
+    <Carousel />
+    <ContainerCardProduct>
+      <CardProduct
+        imgUrl="../images/products/redshoes.jpg"
+        price={450}
+        freeShip={true} />
+    </ContainerCardProduct>
     {/* 3d product */}
 
     {/* banner */}
@@ -14,14 +19,13 @@ function Home() {
       <img loading="lazy"
         src="/images/spromo-large.png" alt="promo_img" />
     </picture>
-    {/* footer */}
-    <footer className="footer">
-      <div className="footer__content">
+    <footer className="home__footer">
+      <div className="home__footer--content">
         <img src="/images/falsefooter.png" alt="false footer" />
-        <div className="disclaimer">
+        <p>
           Demo ficticia sin ninguna funcionalidad, solo el único propósito de fomentar nuevas ideas
           y productos dentro de la comunidad web**
-        </div>
+        </p>
       </div>
     </footer>
   </div>;

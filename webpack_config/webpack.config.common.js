@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -20,30 +21,36 @@ module.exports = {
       {
         test: /\.(js|tsx?)$/,
         use: "swc-loader",
-        // options: {
-        //   async: true,
-        // },
-        exclude: "/node_modules",
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(scss)$/i,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Support old browsers
+          "postcss-loader",
+          // Compiles Sass to CSS
+          {
+            loader: "sass-loader",
+            //exclude: /node_modules/,
+            options: {
+              //implementation: require("node-sass")//1.92s
+              implementation: require("sass-embedded") // 2.83s
+              //implementation: require("sass") // 2.56s
+            }
+          }
+        ]
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
-      },
-      {
-        test: /\.scss$/i,
         use: [
-          "style-loader",
-          "css-loader",
-          "postcss-loader",
-          { loader: "resolve-url-loader" },
-          {
-            loader: "sass-loader",
-            options: {
-              implementation: require.resolve("sass"),
-              sourceMap: true, // important 
-            },
-          },
-        ],
+          MiniCssExtractPlugin.loader,
+          // "style-loader",
+          "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/i,
@@ -54,11 +61,14 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "../public/index.html" })],
+  plugins: [new HtmlWebpackPlugin({ template: "../public/index.html" }),
+  new MiniCssExtractPlugin()],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"],
     alias: {
-      "gs": path.resolve(__dirname, "../src/global_sass")//relative where they're used
+      "gs": path.resolve(__dirname, "../src/global_sass"),
+      "@components": path.resolve(__dirname, "../src/components"),
+      "@utils": path.resolve(__dirname, "../utils")
     }
   },
   performance: {

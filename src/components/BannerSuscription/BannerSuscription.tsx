@@ -1,14 +1,15 @@
 import React from 'react'
-import '../styles/components_scss/BannerSuscription.scss';
+import style from './BannerSuscription.module.scss';
+import { createCss } from '../../../utils/createCss';
+const css = createCss(style);
 
 function BannerSuscription() {
     return (
-        <div className='banner-container'>
-            <div className='banner-title'>
-                <div className="suscribite">
+        <div className={css("banner")}>
+            <div className={css("banner__suscribe")}>
+                <div>
                     Suscribite al nivel 6
                 </div>
-
                 <div className='offer'>
                     <span className='offer-prev-price'>
                         <em>$1.199</em>
@@ -19,7 +20,7 @@ function BannerSuscription() {
                     </div>
                 </div>
             </div>
-            <div className='banner-logos'>
+            <div className={css("banner__logos")}>
                 <div className='banner-logos-subtitle'>
                     Conseguí los mejores beneficios en Mercado Libre y Mercado Pago
                 </div>
@@ -37,11 +38,11 @@ function BannerSuscription() {
                     src='./images/paymeli.png' />
                 <div> Mas descuentos con Mercado Pago</div>
             </div>
-            <div className='banner-footer'>
+            <div className={css("banner__footer")}>
                 <button className='banner-btn'>Suscribite</button>
             </div>
         </div>
     );
 };
 
-export default BannerSuscription
+export default BannerSuscription;

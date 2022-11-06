@@ -8,13 +8,13 @@ const PROD_CONFIG = {
   mode: "production",
   optimization: {
     splitChunks: {
-        chunks: "all",
+      chunks: "all",
     },
-    },
+  },
 };
 
 const production = merge(common, PROD_CONFIG);
-module.exports = production;
+// module.exports = production;
 
 /* SPEED TEST */
-// module.exports = new speedMeasure().wrap(production);
+module.exports = new speedMeasure().wrap(production);

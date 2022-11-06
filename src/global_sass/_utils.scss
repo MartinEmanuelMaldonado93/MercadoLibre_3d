@@ -1,0 +1,30 @@
+@use "sass:math";
+// Utils only have functions 
+
+/* util functions */
+@function pxToEm($pixels) {
+    /*if is writted something like "30px"❌  "30" ✅ */
+    @if not math.is-unitless($pixels) {
+        @error "Invalid parameter. Try to write only numbers";
+    }
+    
+    @return math.div($pixels, 16) + em;
+}
+@function pxToRem($pixels) {
+    /*if it's not a single number*/
+    @if not math.is-unitless($pixels) {
+        @error "Invalid parameter. Try to write only numbers";
+    }
+    
+    @return math.div($pixels, 16) + rem;
+}
+
+/* breakpoints */
+// for media queries use em's, because safari have bugs with rems
+$breakpoint: (
+  "small": 21em, //350 px
+  "medium": 43.75em, // 700 px
+  "large": 56.25em, // 900 px
+  "xlarge": 90em, // 1440 px
+  "4k": 160em,// 2560 px
+);

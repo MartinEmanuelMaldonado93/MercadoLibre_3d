@@ -1,4 +1,8 @@
 @use 'normalize.css';
+@use "variables" as v;
+/* <_global>
+* Contains normalize + sass-variables to use on the entire project
+*/
 
 body {
     font-family: -apple-system,  Ubuntu, Cantarell, sans-serif; 
@@ -15,24 +19,153 @@ $btn_box-shadow: 2px 2px 2px gray;
 $input_box-shadow: 1px 1px 2px gray;
 $transparent-border: 1px solid rgb(222, 222, 222);
 
-@mixin body_boundaries {
-    display: flex;
-    justify-content: space-around;    
-    align-items: center; 
-    max-width: 1250px;
-    margin: 0 auto;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  // margin-inline: .5em; // opcional
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  font-size: 100%;
+  /* opcional */
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+  object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+  object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+p a {
+  display: inline;
+}
+ul {
+  list-style-type: none;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
-@mixin ButtonStyle {
-    user-select: none;
-    border:none;
-    background-color: rgb(41, 129, 237);
-    border-radius: 10px;
-    color: white;
-    padding: 1rem;
-    font-size: 1.2rem;
-    transition: .7s;  
-    &:hover {
-        background-color: rgb(25, 77, 140);
-    }
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  display: none;
+}
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

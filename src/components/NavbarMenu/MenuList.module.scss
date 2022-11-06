@@ -1,0 +1,30 @@
+@use "gs/utils" as u;
+@use "gs/colors" as c;
+@use "gs/variables" as v;
+
+.navmenu {   
+    display: flex;
+    flex-wrap: wrap;
+    background-color: c.$primary-yellow;
+    &__envios {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        svg { 
+            // display: inline-flex;
+            width: min-content;
+        }
+        a {
+            display: inline;
+        }
+    }
+    &__choices {
+        border: 1px solid red;
+        display: none;
+    }
+    &__user{
+        border: 1px solid green;
+        display: none;
+    }
+}

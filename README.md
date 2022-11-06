@@ -1,8 +1,7 @@
-# Proyecto Conceptual de Mercado Libre
+# Conceptual project of Mercado Libre 
 
-El proyecto se creó para aprender a usar webpack desde cero usando
-react con typescript y sass, por falta de tiempo no pudo ser actualizado
-y optimizado pero retomandolo ahora podria incrementar velocidad de carga 
-en un 300% como minimo reemplazando el compilador de webpack por el de swc o esbuild
-además de utilizar draco para comprimir los modelos gltf... la estructura en general de 
-carpetas sera actualizada pronto !
+The project was made to put in practice the most detailed css 
+to replicate and improve ui/ux of Mercado Libre, the most big 
+company on Latam, also wanna put in the radar some 3D features
+to keep introduce the crypto world to next level and keep alentar
+a using this technologies 

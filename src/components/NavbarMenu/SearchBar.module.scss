@@ -1,0 +1,66 @@
+@use "gs/utils" as u;
+@use "gs/colors" as c;
+@use "gs/variables" as v;
+
+$nav_height: 4.1rem;
+$searchbar_height: 0.4rem;
+
+.navbar { 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: c.$yellow-meli;
+  font-size: v.$fs-200;
+  padding-inline: 1em;
+  padding-block: .4em; 
+
+  &__container {
+    width: 100%;
+    // max-width: u.pxToEm(450); //temp
+  }
+  &__logo {
+    // border: 1px solid red;
+    display: none;
+    object-fit: cover;
+    max-width: u.pxToEm(100);
+    width: 100%;
+  }
+  &__searchbar {
+    // border: 1px solid red;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    input {
+      appearance: none;
+      outline: none;
+      width: 100%;
+      border: none;
+      border-radius: 0.2em;
+      font-size: v.$fs-200;
+      box-shadow: 1px 1px 2px gray;
+    }
+    input::placeholder {
+      color: c.$text-color-input;
+    }
+    span {
+      // border: 1px solid blue;
+      font-size: v.$fs-400;
+      padding: .3em;
+      border-radius: .5em;
+    }
+  }
+  &__banner {
+    display: none;
+    // border: 1px solid red;
+    img {
+      display: none;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width:map-get(u.$breakpoint, "medium")) {
+  
+}

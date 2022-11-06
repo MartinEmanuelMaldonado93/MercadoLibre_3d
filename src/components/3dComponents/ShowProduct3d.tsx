@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 // import '../styles/Global.scss';
 import '../components/styles/components3d_scss/ShowProduct3d.scss';
 // Components
-import NavBarMenu from '../components/NavbarMenu/NavBarMenu';
-import CanvasProduct from '../components/Show3Dproduct/CanvasProduct';
+import Navbar from '../NavbarMenu/Navbar';
+import CanvasProduct from '../Show3Dproduct/CanvasProduct';
 import { FaShippingFast, FaStar, FaUndo } from 'react-icons/fa';
 
 const enviroments = [
@@ -30,7 +30,7 @@ function ShowProduct3d({ children, nextPage }: props) {
 
   return (
     <>
-      <NavBarMenu />
+      <Navbar />
       <div className='product'>
         <div className='canvas'>
           <CanvasProduct activarfondo={isChecked}
