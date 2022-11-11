@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "./MenuList.module.scss";
 import { FaMapMarkerAlt, FaUserCircle, FaBell, FaShoppingCart } from "react-icons/fa";
-import { createCss } from '../../../utils/createCss';
+import { createCss } from "@utils";
 const css = createCss(style);
 
 export default function MenuList() {

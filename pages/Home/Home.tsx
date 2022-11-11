@@ -17,11 +17,11 @@ function Home() {
     {/* banner */}
     <picture className="home__picture">
       <img loading="lazy"
-        src="/images/spromo-large.png" alt="promo_img" />
+        src="../images/fake_promo_large.png" alt="promo_img" />
     </picture>
     <footer className="home__footer">
       <div className="home__footer--content">
-        <img src="/images/falsefooter.png" alt="false footer" />
+        <img src="../images/fake_footer.png" alt="false footer" />
         <p>
           Demo ficticia sin ninguna funcionalidad, solo el único propósito de fomentar nuevas ideas
           y productos dentro de la comunidad web**

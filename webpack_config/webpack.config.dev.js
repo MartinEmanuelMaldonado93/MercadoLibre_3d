@@ -1,35 +1,55 @@
+const webpack = require("webpack");
 const path = require("path");
 const common = require("./webpack.config.common.js");
-const { merge } = require("webpack-merge");
-const webpack = require("webpack");
+const { mergeWithRules } = require("webpack-merge");
 const speedMeasure = require("speed-measure-webpack-plugin");
 
-/* Dev */
 
 /** @type {import('webpack').Configuration} */
-const DEV_CONFIG = {
+const DEVELOPMENT_CONFIG = {
   mode: "development",
   output: {
     filename: '[name].bundle.js',
     clean: true,
   },
+  module: {
+    rules: [
+      // sass - css 
+      {
+        test: /\.s?css$/i,
+        use: [
+          "style-loader", // must be prepend to common config
+        ],
+      },
+    ]
+  },
   /** @type {import('webpack-dev-server').Configuration} */
   devServer: {
     port: 9000,
-    hot: true,
+    hot: true,// HMR
   },
   cache: true,
-  devtool: "eval-source-map", // "eval" is more performant but with some cons
+  devtool: "source-map", // "eval" is more performant but with some cons
   target: "web",
   optimization: {
-    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: "all",
+    }
   },
   stats: {
     loggingDebug: ["sass-loader"],
   },
 };
 
-const development = merge(common, DEV_CONFIG);
+const OBJECT_RULE = {
+  module: {
+    rules: {
+      test: "match",
+      use: "prepend"
+    },
+  },
+};
+const development = mergeWithRules(OBJECT_RULE)(common, DEVELOPMENT_CONFIG);
 module.exports = development;
 
 /* SPEED TEST */

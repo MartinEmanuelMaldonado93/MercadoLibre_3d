@@ -1,12 +1,12 @@
-const path = require("path");
 const webpack = require("webpack");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: {
-    meli: "../pages/index.tsx"
+    meli_app: "../pages/index.tsx"
   },
   output: {
     path: path.join(__dirname, "../build"),
@@ -20,17 +20,19 @@ module.exports = {
     rules: [
       {
         test: /\.(js|tsx?)$/,
-        use: "swc-loader",
         exclude: /node_modules/,
+        use: "swc-loader",
       },
       {
-        test: /\.(scss)$/i,
-        exclude: /node_modules/,
+        test: /\.s?css$/i,
+        // exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
-          // "style-loader",
+          // "style-loader", // -- --- --- PROD
+          // MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           "css-loader",
+          // future features of css today
+          // 'postcss-preset-env',
           // Support old browsers
           "postcss-loader",
           // Compiles Sass to CSS
@@ -39,18 +41,11 @@ module.exports = {
             //exclude: /node_modules/,
             options: {
               //implementation: require("node-sass")//1.92s
-              implementation: require("sass-embedded") // 2.83s
-              //implementation: require("sass") // 2.56s
+              // implementation: require("sass-embedded") // 2.83s
+              implementation: require("sass") // 2.56s
             }
           }
         ]
-      },
-      {
-        test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          // "style-loader",
-          "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/i,
@@ -61,10 +56,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "../public/index.html" }),
-  new MiniCssExtractPlugin()],
+  plugins: [new HtmlWebpackPlugin({ template: "../public/index.html" })],
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".json"],
+    extensions: [".mjs", ".tsx", ".ts", ".js", ".json"],
     alias: {
       "gs": path.resolve(__dirname, "../src/global_sass"),
       "@components": path.resolve(__dirname, "../src/components"),

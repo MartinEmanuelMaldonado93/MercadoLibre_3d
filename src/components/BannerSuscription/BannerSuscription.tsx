@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './BannerSuscription.module.scss';
-import { createCss } from '../../../utils/createCss';
+import { createCss } from '@utils';
 const css = createCss(style);
 
 function BannerSuscription() {

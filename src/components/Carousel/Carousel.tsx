@@ -3,7 +3,9 @@ import style from './Carousel.module.scss';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { createCss } from "../../../utils/createCss";
+// import "../../global_sass/slick.scss";
+// import "../../global_sass/slick-theme.scss";
+import { createCss } from "@utils";
 const css = createCss(style);
 
 export default function Carousel() {

@@ -1,7 +1,7 @@
 import React from "react";
 import style from './SearchBar.module.scss';
 import { FaSistrix } from "react-icons/fa";
-import { createCss } from "../../../utils/createCss";
+import { createCss } from "@utils";
 const css = createCss(style);
 
 export default function SearchBar() {
@@ -10,7 +10,7 @@ export default function SearchBar() {
       <div className={css('navbar__container')}
       >
         <img className={css("navbar__logo")}
-          src="../images/logoMeli.png" alt="navbarlogo" />
+          src="../logos/logoMeli.png" alt="navbar logo" />
 
         <form className={css("navbar__searchbar")}>
           <input type={'text'}
@@ -21,7 +21,7 @@ export default function SearchBar() {
         </form>
 
         <a className={css("navbar__banner")} href="">
-          <img src="../images/disney1.png" alt="" />
+          <img src="../logos/disney1.png" alt="" />
           <p>
             Suscribite al nivel 6 por solo
             <span>
