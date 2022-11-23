@@ -1,22 +1,58 @@
+@use "gs/variables" as v;
+@use "gs/colors" as c;
 
-.container {
-    background-color: white; 
-    max-width: 12rem;   
-    border-radius: 5px ; 
-    margin: 0rem 0;
-    transition: .4s; 
+$c-price: rgba(0,0,0,.8);
+$c-green: green;
+
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 12rem;   
+    border-radius: 5px ; 
+    background-color: white; 
+    box-shadow: 2px 3px 10px 3px grey;
+    padding: 0.5em;
+    transition: .4s;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    perspective-origin: center center;
+
+    > * {
+        transform-style: preserve-3d;
+    }
+    --deg: 45deg;
+    transform:  
+    rotateX(
+        calc(var(--deg) * var(--rotX,0))
+    )
+    rotateY(
+        calc(var(--deg) * var(--rotY,0))
+    )
+    
+    ;
     &__img {
         width: 100%;
         object-fit : scale-down;
         box-sizing: border-box;
+        border-radius: 0.3em;
         border-bottom:1px solid lightgray;
     }
-    &__card {
-        &:first-child{
-            border: 1px solid red;
+    &__content {
+        /* price */
+        span:first-child {
+            font-size: v.$fs-400;
+            color: $c-price;
         }
+        /* free ship*/
+        span:nth-child(2){
+            display: block;
+            color: $c-green;
+        }
+    }
+    &__paragraph {
+        font-size: v.$fs-200;
+        word-wrap: break-word;
     }
 }

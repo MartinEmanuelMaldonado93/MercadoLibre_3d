@@ -31,11 +31,11 @@ const DEVELOPMENT_CONFIG = {
   cache: true,
   devtool: "source-map", // "eval" is more performant but with some cons
   target: "web",
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "all",
+  //   }
+  // },
   stats: {
     loggingDebug: ["sass-loader"],
   },

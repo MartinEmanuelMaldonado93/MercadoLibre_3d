@@ -1,16 +1,18 @@
-import React, {ReactNode, CSSProperties} from "react";
+import React, { ReactNode, CSSProperties } from "react";
 
 type props = {
-    children?:JSX.Element | JSX.Element[],
+    children?: JSX.Element | JSX.Element[],
 }
-const ContainerCardProduct = ({children}: props) => {
+const ContainerCardProduct = ({ children }: props) => {
     const css: CSSProperties = {
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr)",
+        placeContent: "center",
+        placeItems: "center",
+        margin: "2rem",
     };
     return <div style={css}>
-        { children }
-  </div>;
+        {children}
+    </div>;
 }
 
 export default ContainerCardProduct;

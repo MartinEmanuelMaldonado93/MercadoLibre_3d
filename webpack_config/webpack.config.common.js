@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "../build"),
-    filename: "[name].[contenthash].js",
+    filename: "[name].[contenthash:8].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
     publicPath: "",

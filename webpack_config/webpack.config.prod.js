@@ -37,6 +37,5 @@ const OBJECT_RULE = {
 };
 const production = mergeWithRules(OBJECT_RULE)(common, PRODUCTION_CONFIG);
 module.exports = production;
-
 /* SPEED TEST */
 // module.exports = new speedMeasure().wrap(production);
