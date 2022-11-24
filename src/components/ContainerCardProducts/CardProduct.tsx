@@ -9,6 +9,7 @@ type props = {
   freeShip?: boolean,
 }
 const css = createCss(styles);
+
 function CardPrice({ imgUrl, price, description, freeShip }: props) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const curr = useRef({ currX: 0, currY: 0 });
@@ -36,19 +37,28 @@ function CardPrice({ imgUrl, price, description, freeShip }: props) {
 
   useEffect(() => {
     let { currX, currY } = curr.current;
-    // Lerp 
-    currX = (currX + (pos.x - currX) * 0.15);
-    currY = (currY + (pos.y - currY) * 0.15);
+    // Lerp
+    // currX = (currX + (pos.x - currX) * 0.15);
+    // currY = (currY + (pos.y - currY) * 0.15);
+
+    currX = pos.x;
+    currY = pos.y;
 
     const { innerWidth, innerHeight } = window;
     const rotX = ((currY / innerHeight) * -2) + 1;
     const rotY = ((currX / innerWidth) * 2) - 1;
-    console.log("x", String(rotX));
-    console.log("y", String(rotY));
-
     card.current.style.setProperty("--rotX", String(rotX))
     card.current.style.setProperty("--rotY", String(rotY))
 
+    const mouseY = pos.y - (card.current.clientHeight / 2);
+    const mouseX = pos.x - (card.current.clientWidth / 2);
+
+    card.current.style.setProperty("--mouseX", `${mouseX}px`)
+    card.current.style.setProperty("--mouseY", `${mouseY}px`)
+    // shadow 
+    // card.current.style.setProperty("--x-shadow", `${rotX*10}px`)
+    // card.current.style.setProperty("--y-shadow", `${rotY*10}px`)
+    // card.current.style.transform = "translateZ(10px)";
     return () => {
       // cancelAnimationFrame(1);
     };

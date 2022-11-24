@@ -11,27 +11,37 @@ $c-green: green;
     max-width: 12rem;   
     border-radius: 5px ; 
     background-color: white; 
-    box-shadow: 2px 3px 10px 3px grey;
+    background: radial-gradient( 
+    farthest-corner at 
+    var(--mouseX) var(--mouseY),
+    white 0%,
+    hsl(0 1% 56% / .2) 100%);
     padding: 0.5em;
     transition: .4s;
     cursor: pointer;
     transform-style: preserve-3d;
     perspective: 800px;
     perspective-origin: center center;
+    /* when hover */
+    --x-shadow: 0px;
+    --y-shadow: 0px;
+    // box-shadow: var(--x-shadow) var(--y-shadow) 10px 3px grey;
+    // box-shadow: 0px 0px 5px 4px gray;
+    border:1px solid gray;
 
     > * {
         transform-style: preserve-3d;
     }
-    --deg: 45deg;
+    /* rotation */
+    --deg: 55deg;
     transform:  
     rotateX(
         calc(var(--deg) * var(--rotX,0))
     )
     rotateY(
         calc(var(--deg) * var(--rotY,0))
-    )
-    
-    ;
+    );
+
     &__img {
         width: 100%;
         object-fit : scale-down;
@@ -55,4 +65,10 @@ $c-green: green;
         font-size: v.$fs-200;
         word-wrap: break-word;
     }
+}
+.card::before{
+    content: "";
+    border: 2px dotted pink;
+    width: 10rem;
+    height: 3rem;
 }
