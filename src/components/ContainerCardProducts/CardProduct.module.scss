@@ -31,7 +31,7 @@ $c-green: green;
         transform-style: preserve-3d;
     }
     /* rotation */
-    --deg: 35deg;
+    --deg: 15deg;
     transform:  
     rotateX(
         calc(var(--deg) * var(--rotX,0))
