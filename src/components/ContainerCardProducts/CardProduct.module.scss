@@ -14,18 +14,16 @@ $c-green: green;
     background: radial-gradient( 
     farthest-corner at 
     var(--mouseX) var(--mouseY),
-    white 0%,
+    rgb(255, 255, 255) 0%,
     hsl(0 1% 56% / .2) 100%);
     padding: 0.5em;
-    transition: .4s;
+    // transition: .6s;
     cursor: pointer;
     transform-style: preserve-3d;
-    perspective: 800px;
-    perspective-origin: center center;
     /* when hover */
     --x-shadow: 0px;
     --y-shadow: 0px;
-    // box-shadow: var(--x-shadow) var(--y-shadow) 10px 3px grey;
+    box-shadow: var(--x-shadow) var(--y-shadow) 10px 3px grey;
     // box-shadow: 0px 0px 5px 4px gray;
     border:1px solid gray;
 
@@ -33,7 +31,7 @@ $c-green: green;
         transform-style: preserve-3d;
     }
     /* rotation */
-    --deg: 55deg;
+    --deg: 35deg;
     transform:  
     rotateX(
         calc(var(--deg) * var(--rotX,0))
@@ -68,7 +66,7 @@ $c-green: green;
 }
 .card::before{
     content: "";
-    border: 2px dotted pink;
+    // border: 2px dotted pink;
     width: 10rem;
     height: 3rem;
 }
