@@ -1,5 +1,6 @@
 @use 'normalize.css';
 @use "variables" as v;
+@use "colors" as c;
 /* <_global>
 * Contains normalize + sass-variables to use on the entire project
 */
@@ -7,7 +8,21 @@
 body {
     font-family: -apple-system,  Ubuntu, Cantarell, sans-serif; 
 }
-
+body::-webkit-scrollbar {
+  width: .8em;
+  height: 2em;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(119, 117, 117);
+  border-radius: .3em;
+  box-shadow: 
+  inset -2px 0px 4px rgb(51, 50, 50),
+  inset 2px 0px 5px  white;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: 
+  inset -2px 0px 4px gray;
+}
 $primary-yellow: #fff159; 
 $bg-page: #ebebeb;
 $text-color-mp: #3483fa;

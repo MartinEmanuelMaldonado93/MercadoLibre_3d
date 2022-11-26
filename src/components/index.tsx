@@ -3,4 +3,6 @@ import Carousel from "./Carousel/Carousel";
 import CardProduct from "./ContainerCardProducts/CardProduct";
 import BannerSuscription from "./BannerSuscription/BannerSuscription";
 import ContainerCardProduct from "./ContainerCardProducts/ContainerCardProduct";
-export { Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription };
+import CanvasProduct from "./Show3Dproduct/CanvasProduct";
+import Iphone13 from "./3Dmodels/Iphone13";
+export { Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription, CanvasProduct, Iphone13 };

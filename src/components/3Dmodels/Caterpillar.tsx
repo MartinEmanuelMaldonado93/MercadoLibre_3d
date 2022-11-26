@@ -11,13 +11,11 @@ type GLTFResult = GLTF & {
   materials: {
     sh_catWorkBoot: THREE.MeshStandardMaterial
   }
-}; 
+};
 
 
 export default function Caterpillar({ ...props }: JSX.IntrinsicElements['group'],
 ) {
-
-
   const group = useRef<THREE.Group>();
   const { nodes, materials } = useGLTF('/models/caterpillar/scene.gltf') as GLTFResult;
   return (

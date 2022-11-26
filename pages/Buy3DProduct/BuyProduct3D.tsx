@@ -1,43 +1,39 @@
 import React, { useState } from 'react';
-// import '../styles/Global.scss';
-import '../components/styles/components3d_scss/ShowProduct3d.scss';
+import style from "./BuyProduct3D.module.scss";
 // Components
-import Navbar from '../NavbarMenu/Navbar';
-import CanvasProduct from '../Show3Dproduct/CanvasProduct';
+import { Navbar, CanvasProduct } from "@components";
 import { FaShippingFast, FaStar, FaUndo } from 'react-icons/fa';
+import { createCss } from '@utils';
+const css = createCss(style);
 
 const enviroments = [
   'royal_esplanade_1k.hdr',
   'hdrs/autumn_forest_04_1k.hdr',
   'hdrs/ehingen_hillside_1k.hdr',
   'hdrs/park_parking_1k.hdr',
-  'hdrs/provence_studio_1k.hdr'];
-
+  'hdrs/provence_studio_1k.hdr'
+];
 interface props {
   children: React.ReactNode,
-  nextPage: string,
 }
-
-function ShowProduct3d({ children, nextPage }: props) {
-
+/** Page */
+function BuyProduct3D({ children }: props) {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const [option, setOption] = useState<number>(0);
 
   const handleOnChange = () => {
-    console.log("click !👮‍♂️");
     setIsChecked(!isChecked);
   };
 
   return (
     <>
       <Navbar />
-      <div className='product'>
+      <div className={css('product')} >
         <div className='canvas'>
           <CanvasProduct activarfondo={isChecked}
             fondo={enviroments[option]} >
             {children}
           </CanvasProduct>
-
           <div className="canvas__controls">
             <input
               className="canvas__controls__input"
@@ -64,7 +60,6 @@ function ShowProduct3d({ children, nextPage }: props) {
               <div className="options__option" onClick={() => setOption(4)}>Estudio Fotografía</div>
             </div>
           </div>
-
         </div>
         <div className='other-products'>
           {/* CardPricesssssss */}
@@ -74,7 +69,6 @@ function ShowProduct3d({ children, nextPage }: props) {
           {/* PREGUNTAS */}
           {/* OPINIONES */}
         </div>
-
         <aside className='aside'>
           <div className="nuevo-vendido">Nuevo | 232.999 vendidos</div>
           <div className='title'>Apple iPhone 12 Pro Max (256GB) - Perla </div>
@@ -122,4 +116,4 @@ function ShowProduct3d({ children, nextPage }: props) {
   );
 }
 
-export default ShowProduct3d;
+export default BuyProduct3D;

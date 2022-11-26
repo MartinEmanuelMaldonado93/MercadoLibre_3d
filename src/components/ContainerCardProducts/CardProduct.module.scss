@@ -47,6 +47,11 @@ $c-green: green;
         border-radius: 0.3em;
         border-bottom:1px solid lightgray;
     }
+    &__title {
+        font-size: v.$fs-400;
+        color: hsl(0, 0%, 0%, .6);
+        font-weight: 600;
+    }
     &__content {
         /* price */
         span:first-child {
@@ -64,13 +69,10 @@ $c-green: green;
         }
     }
     &__paragraph {
+        padding: .2em .3em;
+        border-radius: .3em;
+        background-color: hsl(0, 0%, 100%, .7);
         font-size: v.$fs-200;
         word-wrap: break-word;
     }
-}
-.card::before{
-    content: "";
-    // border: 2px dotted pink;
-    width: 10rem;
-    height: 3rem;
 }

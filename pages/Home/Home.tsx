@@ -9,11 +9,13 @@ function Home() {
     <ContainerCardProduct>
       <CardProduct
         imgUrl="../images/products/redshoes.jpg"
-        price={450}
-        freeShip={true} />
+        price={34000}
+        freeShip={true}
+        titleProd="John fool"
+        description="Zapatillas John Fool Art 320 Hombre/Mujer Urbanas (34/45)" />
     </ContainerCardProduct>
     {/* 3d product */}
-
+    
     {/* banner */}
     <picture className="home__picture">
       <img loading="lazy"

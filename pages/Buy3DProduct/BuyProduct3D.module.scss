@@ -1,4 +1,4 @@
-// @use "../Global";
+@use "gs/global";
 
 .product {
   display: flex;
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    border: Global.$transparent-border;
+    // border: Global.$transparent-border;
     border-radius: 0.5rem;
     max-width: 140px;
     .checkbox__activar-fondo {
@@ -72,7 +72,7 @@
       margin: 3px;
       border-radius: 0.4rem;
       font-weight: 500;
-      color: Global.$text-color;
+      // color: Global.$text-color;
       box-shadow: -1px -1px 2px inset gray;
       transition: 0.1s;
       &:hover {
@@ -89,7 +89,7 @@
   }
 }
 #controls__input:checked ~ #controls__checkbox > #checkbox__label {
-  background: Global.$text-color-mp;
+  // background: Global.$text-color-mp;
   visibility: visible;
 }
 #controls__input:checked ~ #controls__checkbox > 
@@ -121,7 +121,7 @@
 .stars {
   margin: 5px;
   span {
-    color: Global.$text-color-mp;
+    // color: Global.$text-color-mp;
   }
 }
 .mas-vendido {
@@ -152,13 +152,13 @@
 
   :nth-child(1),
   :nth-child(2) {
-    color: Global.$envios;
+    // color: Global.$envios;
     display: block;
     margin: 0.1rem;
   }
 }
 .btn-comprar {
-  @include Global.ButtonStyle;
+  // @include Global.ButtonStyle;
   text-align: center;
   font-size: 1.5rem;
   border-radius: 0.7rem;
@@ -169,7 +169,7 @@
   }
 }
 .btn-carrito {
-  @include Global.ButtonStyle;
+  // @include Global.ButtonStyle;
   border-radius: 0.7rem;
   font-size: 1.5rem;
   text-align: center;

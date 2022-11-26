@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls, Float } from "@react-three/drei";
-
+// import { } from "@components";
 
 interface backgroundProps {
   fondo: string,
@@ -9,16 +9,14 @@ interface backgroundProps {
   children: React.ReactNode,
 }
 function CanvasProduct({ fondo, activarfondo, children }: backgroundProps) {
-
   return (
     <Canvas
       camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }} >
-
       <ambientLight intensity={0.7} />
       <pointLight position={[-5, -5, -5]} intensity={4} />
       <pointLight position={[3, 3, -5]} />
 
-      <Suspense fallback={'loading...'}>
+      <Suspense fallback={<div>'loading...'</div>}>
         <Float
           position={[0, -0.7, 0]}
           rotation={[0.1, 0, 0]}
