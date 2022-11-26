@@ -4,9 +4,9 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls, Float, Sparkles } from "@react-three/drei";
 import { Link } from "react-router-dom";
 // Components 
-import Iphone13 from './3dComponents/Iphone13';
-import MountainBike from './3dComponents/MountainBike';
-import GamingChair1 from './3dComponents/GamingChair1';
+import Iphone13 from './3Dmodels/Iphone13';
+import MountainBike from './3Dmodels/MountainBike';
+import GamingChair1 from './3Dmodels/GamingChair1';
 import { Suspense } from 'react';
 //performance={{ max: 0.3 }} gl={{ antialias: false }}
 

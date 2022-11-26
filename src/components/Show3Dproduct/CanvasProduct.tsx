@@ -8,12 +8,10 @@ interface backgroundProps {
   activarfondo: boolean,
   children: React.ReactNode,
 }
-
-
-function CanvasProduct({ fondo, activarfondo, children }: backgroundProps ) {
+function CanvasProduct({ fondo, activarfondo, children }: backgroundProps) {
 
   return (
-    <Canvas 
+    <Canvas
       camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }} >
 
       <ambientLight intensity={0.7} />
@@ -27,7 +25,9 @@ function CanvasProduct({ fondo, activarfondo, children }: backgroundProps ) {
           rotationIntensity={3}
           floatIntensity={2}
           speed={2} >
+
           {children}
+
         </Float>
       </Suspense>
 
