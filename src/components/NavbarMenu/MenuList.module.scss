@@ -17,6 +17,10 @@
         }
         a {
             display: inline;
+            border: 1px solid red;
+            span {
+                margin-inline: .5em;
+            }
         }
     }
     &__choices {

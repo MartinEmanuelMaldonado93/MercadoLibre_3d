@@ -31,7 +31,7 @@ $c-green: green;
         transform-style: preserve-3d;
     }
     /* rotation */
-    --deg: 15deg;
+    --deg: 45deg;
     transform:  
     rotateX(
         calc(var(--deg) * var(--rotX,0))
@@ -57,6 +57,10 @@ $c-green: green;
         span:nth-child(2){
             display: block;
             color: $c-green;
+            transition: all .5s;
+        }
+        span:nth-child(2):hover {
+            transform: translate3D(0,0, 1rem);
         }
     }
     &__paragraph {
