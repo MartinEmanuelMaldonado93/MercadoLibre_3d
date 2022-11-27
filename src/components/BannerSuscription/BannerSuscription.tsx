@@ -21,21 +21,17 @@ function BannerSuscription() {
                 </div>
             </div>
             <div className={css("banner__logos")}>
-                <div className='banner-logos-subtitle'>
+                <div className={css('banner__logos--title')}>
                     Conseguí los mejores beneficios en Mercado Libre y Mercado Pago
                 </div>
-
-                <img style={{ height: '3rem', borderRadius: '50%' }}
-                    src='./images/disneyplus.png' />
+                
+                <img className={css('banner__logos--img')} src='/logos/disneyplus.png' />
                 <div>Disney sin cargo</div>
-                <img style={{ height: '3rem', borderRadius: '50%' }}
-                    src='./images/star.png' />
+                <img className={css('banner__logos--img')} src='/logos/star.png' />
                 <div> Start+ sin cargo</div>
-                <img style={{ height: '3rem', borderRadius: '50%' }}
-                    src='./images/meli.png' />
+                <img className={css('banner__logos--img')} src='/logos/meli.png' />
                 <div> Beneficios en mercado libre</div>
-                <img style={{ height: '3rem', borderRadius: '50%' }}
-                    src='./images/paymeli.png' />
+                <img className={css('banner__logos--img')} src='/logos/paymeli.png' />
                 <div> Mas descuentos con Mercado Pago</div>
             </div>
             <div className={css("banner__footer")}>
