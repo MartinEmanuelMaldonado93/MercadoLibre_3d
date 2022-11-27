@@ -1,67 +1,65 @@
-import * as THREE from 'three'
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { GLTF } from 'three-stdlib'
+import { Group, Mesh, MeshStandardMaterial } from 'three';
+import React, { useRef } from 'react';
+import { useGLTF } from '@react-three/drei';
+import { GLTF } from 'three-stdlib';
 
 type GLTFResult = GLTF & {
   nodes: {
-    Object_8: THREE.Mesh
-    Object_10: THREE.Mesh
-    Object_12: THREE.Mesh
-    Object_14: THREE.Mesh
-    Object_16: THREE.Mesh
-    Object_19: THREE.Mesh
-    Object_21: THREE.Mesh
-    Object_23: THREE.Mesh
-    Object_25: THREE.Mesh
-    Object_27: THREE.Mesh
-    Object_29: THREE.Mesh
-    Object_31: THREE.Mesh
-    Object_34: THREE.Mesh
-    Object_36: THREE.Mesh
-    Object_38: THREE.Mesh
-    Object_40: THREE.Mesh
-    Object_43: THREE.Mesh
-    Object_46: THREE.Mesh
-    Object_49: THREE.Mesh
-    Object_52: THREE.Mesh
-    Object_55: THREE.Mesh
-    Object_57: THREE.Mesh
-    Object_59: THREE.Mesh
-    Object_61: THREE.Mesh
-    Object_63: THREE.Mesh
-    Object_65: THREE.Mesh
-    Object_67: THREE.Mesh
-    Object_69: THREE.Mesh
-    Object_72: THREE.Mesh
+    Object_8: Mesh
+    Object_10: Mesh
+    Object_12: Mesh
+    Object_14: Mesh
+    Object_16: Mesh
+    Object_19: Mesh
+    Object_21: Mesh
+    Object_23: Mesh
+    Object_25: Mesh
+    Object_27: Mesh
+    Object_29: Mesh
+    Object_31: Mesh
+    Object_34: Mesh
+    Object_36: Mesh
+    Object_38: Mesh
+    Object_40: Mesh
+    Object_43: Mesh
+    Object_46: Mesh
+    Object_49: Mesh
+    Object_52: Mesh
+    Object_55: Mesh
+    Object_57: Mesh
+    Object_59: Mesh
+    Object_61: Mesh
+    Object_63: Mesh
+    Object_65: Mesh
+    Object_67: Mesh
+    Object_69: Mesh
+    Object_72: Mesh
   }
   materials: {
-    Frame: THREE.MeshStandardMaterial
-    Frame2: THREE.MeshStandardMaterial
-    Port: THREE.MeshStandardMaterial
-    Antenna: THREE.MeshStandardMaterial
-    material: THREE.MeshStandardMaterial
-    Bezel: THREE.MeshStandardMaterial
-    Body: THREE.MeshStandardMaterial
-    Wallpaper: THREE.MeshStandardMaterial
-    Camera_Glass: THREE.MeshStandardMaterial
-    Lens: THREE.MeshStandardMaterial
-    Material: THREE.MeshStandardMaterial
-    Glass: THREE.MeshStandardMaterial
-    ['Camera_Frame.001']: THREE.MeshStandardMaterial
-    Screen_Glass: THREE.MeshStandardMaterial
-    Logo: THREE.MeshStandardMaterial
-    Gray_Glass: THREE.MeshStandardMaterial
-    Flash: THREE.MeshStandardMaterial
-    Camera_Frame: THREE.MeshStandardMaterial
-    Black_Glass: THREE.MeshStandardMaterial
-    ['Material.002']: THREE.MeshStandardMaterial
+    Frame: MeshStandardMaterial
+    Frame2: MeshStandardMaterial
+    Port: MeshStandardMaterial
+    Antenna: MeshStandardMaterial
+    material: MeshStandardMaterial
+    Bezel: MeshStandardMaterial
+    Body: MeshStandardMaterial
+    Wallpaper: MeshStandardMaterial
+    Camera_Glass: MeshStandardMaterial
+    Lens: MeshStandardMaterial
+    Material: MeshStandardMaterial
+    Glass: MeshStandardMaterial
+    ['Camera_Frame.001']: MeshStandardMaterial
+    Screen_Glass: MeshStandardMaterial
+    Logo: MeshStandardMaterial
+    Gray_Glass: MeshStandardMaterial
+    Flash: MeshStandardMaterial
+    Camera_Frame: MeshStandardMaterial
+    Black_Glass: MeshStandardMaterial
+    ['Material.002']: MeshStandardMaterial
   }
 }
-
-
 export default function Iphone13({ ...props }: JSX.IntrinsicElements['group']) {
-  const group = useRef<THREE.Group>();
+  const group = useRef<Group>();
   const { nodes, materials } = useGLTF('/models/apple13/scene.gltf') as GLTFResult
 
   return (

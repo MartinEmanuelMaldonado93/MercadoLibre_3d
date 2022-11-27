@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import React, { useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home/Home";
-import BuyProduct3D from './Buy3DProduct/BuyProduct3D';
+import BuyProduct3D from './BuyProduct3D/BuyProduct3D';
 import { Iphone13 } from '@components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

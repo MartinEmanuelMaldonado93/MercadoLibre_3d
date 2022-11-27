@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from "./BuyProduct3D.module.scss";
 // Components
-import { Navbar, CanvasProduct } from "@components";
+import { Navbar, CanvasProduct, Iphone13 } from "@components";
 import { FaShippingFast, FaStar, FaUndo } from 'react-icons/fa';
 import { createCss } from '@utils';
 const css = createCss(style);
@@ -14,7 +14,7 @@ const enviroments = [
   'hdrs/provence_studio_1k.hdr'
 ];
 interface props {
-  children: React.ReactNode,
+  children?: React.ReactNode,
 }
 /** Page */
 function BuyProduct3D({ children }: props) {
@@ -32,7 +32,8 @@ function BuyProduct3D({ children }: props) {
         <div className='canvas'>
           <CanvasProduct activarfondo={isChecked}
             fondo={enviroments[option]} >
-            {children}
+            {/* {children} */}
+            {/* <Iphone13 /> */}
           </CanvasProduct>
           <div className="canvas__controls">
             <input

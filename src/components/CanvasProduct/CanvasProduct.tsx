@@ -1,14 +1,13 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls, Float } from "@react-three/drei";
-// import { } from "@components";
 
-interface backgroundProps {
+interface props {
   fondo: string,
   activarfondo: boolean,
   children: React.ReactNode,
 }
-function CanvasProduct({ fondo, activarfondo, children }: backgroundProps) {
+function CanvasProduct({ fondo, activarfondo, children }: props) {
   return (
     <Canvas
       camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }} >
