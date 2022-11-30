@@ -1,45 +1,72 @@
 .banner {
     display: flex;
     flex-wrap: wrap;
-    max-height: min-content ;
+    max-height: min-content;
+
     &__suscribe {
-        align-self: center; 
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        padding: .2rem 1.5rem;
-        background: linear-gradient(130deg,hsl(290, 68%, 46%) 55%,hsl(300, 48%, 60%) 60% ,#0c1a51);
+        padding: .2em .5em;
+        background: linear-gradient(130deg, hsl(290, 68%, 46%) 55%, hsl(300, 48%, 60%) 60%, #0c1a51);
         border-radius: .2em .2em 0 0;
-        color:white; 
-        // font-size: ;
+        color: white;
         font-weight: 600;
+
+        & div:first-child {
+            font-size: var(--fs-500);
+        }
+
+        &--price {
+            span em {
+                text-decoration: line-through;
+                display: block;
+            }
+
+            div {
+                background-color: green;
+                color: white;
+                border-radius: .4em;
+            }
+        }
     }
+
     &__logos {
         display: flex;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
+        align-items: center;
         background-color: white;
     }
+
     &__logos--title {
-        width: 100%;
         flex-grow: 1;
+        width: 100%;
+        padding: .5em;
+        text-align: center;
     }
+
     &__logos--img {
         object-fit: scale-down;
         height: min(2.5em, 2.5rem);
-        width:min-content;
+        width: min-content;
+        margin-inline: .5em;
     }
-    &__footer{
+
+    &__footer {
         background-color: white;
         width: 100%;
+
         button {
             float: right;
-            padding: .8em;
+            padding: .4em .8em;
             margin-right: .6em;
             margin-bottom: .6rem;
             background-color: rgb(41, 129, 237);
             border-radius: .7em;
-            border:none;
+            border: none;
             color: white;
-            font-size: 1.2rem; 
-            transition: .5s; 
+            font-size: var(--fs-300);
+            transition: .5s;
         }
     }
 }

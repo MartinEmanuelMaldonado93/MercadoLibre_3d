@@ -1,0 +1,102 @@
+.banner3D {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: .5em;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 4px lightgray;
+    animation: lightning infinite 5s ease-in-out;
+
+    &__title {
+        grid-area: 1/1/1/1;
+        align-self: center;
+
+        &--subtitle {
+            h4 {
+                letter-spacing: 3px;
+                font-size: var(--fs-300);
+            }
+
+            h1 {
+                font-size: var(--fs-500);
+                user-select: none;
+            }
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        padding: 1rem;
+        font-size: .8rem;
+        z-index: 5;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(41, 129, 237);
+        color: white;
+        transition: background-color 0.7s;
+
+        &:hover {
+            background-color: rgb(25, 77, 140);
+        }
+    }
+
+    &__canvas {
+        // grid-area: 1/1/1/1;
+        border-radius: .4em;
+        height: auto;
+        padding-top: .5em;
+        margin-top: -10rem;
+        height: calc(20vh + 9rem);
+
+        &:hover {
+            cursor: grab;
+        }
+    }
+}
+
+/* Animations */
+@keyframes lightning {
+    0% {
+        box-shadow: 0px 5px 10px 4px lightgray;
+    }
+
+    25% {
+        box-shadow: 0px 0px 20px 8px rgb(41, 129, 237);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 12px rgb(104, 172, 255);
+    }
+
+    100% {
+        box-shadow: 0px 5px 10px 8px lightgray;
+    }
+}
+
+/* Media Queries */
+
+/* mobile-m 375px */
+@media (min-width: 23.43rem) {}
+
+/* mobile-l 425px */
+@media (min-width: 26.56rem) {}
+
+/* tablet 768px */
+@media (min-width: 43.75rem) {
+    .banner3D {
+        padding: 2rem;
+    }
+}
+
+/* laptop 1024px */
+@media (min-width: 64rem) {}
+
+/* laptop-l 1440px */
+@media (min-width: 90rem) {}
+
+/* 4k 2560px */
+
+@media (min-width: 160rem) {}

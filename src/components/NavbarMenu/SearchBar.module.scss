@@ -1,23 +1,24 @@
 @use "gs/utils" as u;
-@use "gs/colors" as c;
-@use "gs/variables" as v;
+// @use "gs/colors" as c;
 
 $nav_height: 4.1rem;
 $searchbar_height: 0.4rem;
+$input-radius: .2em;
 
-.navbar { 
+.navbar {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: c.$yellow-meli;
-  font-size: v.$fs-200;
+  background-color: var(--meli-yellow);
+  font-size: var(--fs-200);
   padding-inline: 1em;
-  padding-block: .4em; 
+  padding-block: .4em;
 
   &__container {
     width: 100%;
     // max-width: u.pxToEm(450); //temp
   }
+
   &__logo {
     // border: 1px solid red;
     display: none;
@@ -25,42 +26,64 @@ $searchbar_height: 0.4rem;
     max-width: u.pxToEm(100);
     width: 100%;
   }
+
   &__searchbar {
-    // border: 1px solid red;
-    background-color: white;
     display: flex;
-    width: 100%;
-    input {
+    // width: 100%;
+
+    &--icon {
+      padding: .3em;
+      border-start-start-radius: .2em;
+      border-end-start-radius: .2em;
+      background-color: white;
+      box-shadow: var(--input-box-shadow);
+      color: var(--meli-text-light);
+      font-size: var(--fs-400);
+
+    }
+
+    &--input {
       appearance: none;
       outline: none;
       width: 100%;
       border: none;
-      border-radius: 0.2em;
-      font-size: v.$fs-200;
-      box-shadow: 1px 1px 2px gray;
+      border-start-end-radius: .2em;
+      border-end-end-radius: 0.2em;
+      background-color: white;
+      font-size: var(--fs-200);
+      box-shadow: var(--input-box-shadow);
+
+      &::placeholder {
+        color: var(--meli-text-light);
+      }
     }
-    input::placeholder {
-      color: c.$text-color-input;
+
+    &--menu {
+      flex-basis: 3rem;
+      display: flex;
+      place-items: center;
+
+      svg {
+        width: 1.5rem;
+        font-size: var(--fs-300);
+        color: hsl(0, 0%, 0%, .5);
+      }
     }
-    span {
-      // border: 1px solid blue;
-      font-size: v.$fs-400;
-      padding: .3em;
-      border-radius: .5em;
-    }
+
   }
+
   &__banner {
     display: none;
+
     // border: 1px solid red;
     img {
       display: none;
     }
+
     p {
       display: none;
     }
   }
 }
 
-@media screen and (min-width:map-get(u.$breakpoint, "medium")) {
-  
-}
+@media screen and (min-width:map-get(u.$breakpoint, "medium")) {}

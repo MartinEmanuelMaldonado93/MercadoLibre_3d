@@ -10,12 +10,12 @@ function BannerSuscription() {
                 <div>
                     Suscribite al nivel 6
                 </div>
-                <div className='offer'>
-                    <span className='offer-prev-price'>
+                <div className={css("banner__suscribe--price")}>
+                    <span>
                         <em>$1.199</em>
                         $399 / mes
                     </span>
-                    <div className='offer-year'>
+                    <div>
                         67% OFF TODO UN AÑO
                     </div>
                 </div>
@@ -24,7 +24,7 @@ function BannerSuscription() {
                 <div className={css('banner__logos--title')}>
                     Conseguí los mejores beneficios en Mercado Libre y Mercado Pago
                 </div>
-                
+
                 <img className={css('banner__logos--img')} src='/logos/disneyplus.png' />
                 <div>Disney sin cargo</div>
                 <img className={css('banner__logos--img')} src='/logos/star.png' />

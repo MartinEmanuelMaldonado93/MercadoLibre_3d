@@ -1,33 +1,35 @@
 @use "gs/utils" as u;
 @use "gs/colors" as c;
-@use "gs/variables" as v;
 
-.navmenu {   
+.navmenu {
     display: flex;
     flex-wrap: wrap;
-    background-color: c.$primary-yellow;
+    background-color: var(--meli-yellow);
+
     &__envios {
         width: 100%;
         display: flex;
         align-items: center;
         gap: .5em;
-        svg { 
+
+        svg {
             // display: inline-flex;
             width: min-content;
         }
-        a {
-            display: inline;
-            // border: 1px solid red;
-            span {
-                margin-inline: .5em;
-            }
+
+        // border: 1px solid red;
+        div span {
+            margin-inline: .5em;
         }
+
     }
+
     &__choices {
         border: 1px solid red;
         display: none;
     }
-    &__user{
+
+    &__user {
         border: 1px solid green;
         display: none;
     }

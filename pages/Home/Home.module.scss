@@ -1,10 +1,13 @@
-@use "gs/global" as g;
 @use "gs/colors" as c;
 @use "gs/utils" as u;
+@use "gs/global";
 
 .home {
   background-color: c.$bg-page;
   margin: 0 auto;
+
+  font-size: var(--fs-200);
+  cursor: pointer;
 
   &__picture {
     img {

@@ -66,7 +66,6 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
     RAF_ID.current = requestAnimationFrame(animate);
     previousTime.current = time;
   }
-  // USE_EFFECT
   useEffect(() => {
     //console.count("useEfect ");
 
@@ -84,9 +83,9 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
     }
   }, [isOnMove]);
 
-  function onMouseMove(event: any) {
+  function onPointerMove(event: any) {
     const e = event.touches ? event.touches[0] : event;
-
+    console.log(e);
     if (!isOnMove) {
       prevX.current = e.clientX + 0.5;
       prevY.current = e.clientY + 0.5;
@@ -99,7 +98,7 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
 
   }
 
-  function onMouseLeave(e: any) {
+  function onPointerLeave(e: any) {
     //todo: reset function
     // console.log(`leave ${isOnMove}`)
     if (isOnMove) {
@@ -113,8 +112,9 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
   return (
     <div className={css("card")}
       ref={card}
-      onPointerMove={onMouseMove}
-      onPointerLeave={onMouseLeave}>
+      onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}>
+      
       <div className={css('card__title')}
       >{titleProd ?? ""}</div>
       <img className={css('card__img')}

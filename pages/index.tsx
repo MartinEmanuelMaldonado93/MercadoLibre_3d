@@ -1,25 +1,38 @@
 import ReactDOM from 'react-dom/client';
-// import App from '../pages/pages/App';
-import { BrowserRouter } from 'react-router-dom';
 import React, { useRef } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Home from "./Home/Home";
-import BuyProduct3D from './BuyProduct3D/BuyProduct3D';
-import { Iphone13 } from '@components';
+import { createBrowserRouter, RouterProvider, Route, BrowserRouter, Routes } from 'react-router-dom';
 
+import Home from "./Home/Home";
+import { Iphone13 } from '@components';
+import BuyProduct3D from './BuyProduct3D/BuyProduct3D';
+
+const routerHome = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        // path: "/about",
+        // element: <About />
+      }
+    ]
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={
-        <Home /> 
-      } />
-      <Route path="/BuyProduct3D"
-        element={
-          <BuyProduct3D >
-            <Iphone13 />
-          </BuyProduct3D>
-        } />
-    </Routes>
-  </BrowserRouter>
+  <React.StrictMode >
+    <RouterProvider router={routerHome} />
+    {/* <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/buyproduct3d"
+           element={
+             <BuyProduct3D >
+               <Iphone13 />
+             </BuyProduct3D>
+           } />
+      </Routes>
+    </BrowserRouter> */}
+  </React.StrictMode>
 );

@@ -60,7 +60,7 @@ type GLTFResult = GLTF & {
 }
 export default function Iphone13({ ...props }: JSX.IntrinsicElements['group']) {
   const group = useRef<Group>();
-  const { nodes, materials } = useGLTF('/models/apple13/scene.gltf') as GLTFResult
+  const { nodes, materials } = useGLTF('/models/apple13/scene.gltf') as GLTFResult;
 
   return (
     <group ref={group} {...props} dispose={null}>

@@ -9,12 +9,11 @@ export default function MenuList() {
         <div className={css('navmenu')}>
             <div>
                 <div className={css('navmenu__envios')}>
-                    <FaMapMarkerAlt className={css('navmenu__envios--logo')}
-                    />
-                    <a href="" className='navmenu__envios--anchor'>
+                    <FaMapMarkerAlt className={css('navmenu__envios--logo')} />
+                    <div className='navmenu__envios--anchor'>
                         <span>Enviar a</span>
                         <span>Buenos Aires 1826</span>
-                    </a>
+                    </div>
                 </div>
 
                 <div className={css('navmenu__choices')} >

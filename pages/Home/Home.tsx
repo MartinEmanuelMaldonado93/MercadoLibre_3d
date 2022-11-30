@@ -1,13 +1,17 @@
-import React, { Suspense } from "react";
-import "./Home.scss";
-import { Navbar, Carousel, CardProduct, ContainerCardProduct, CanvasProduct, Iphone13, BannerSuscription } from "@components";
-import BuyProduct3D from "../BuyProduct3D/BuyProduct3D";
-import { Float, Environment, OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-// import { Navbar, CanvasProduct } from "@components";
+import React, { lazy, Suspense } from "react";
+import {
+  Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription
+} from "@components";
+import { Link, Route, Routes } from "react-router-dom";
+import BuyProduct3D from "pages/BuyProduct3D/BuyProduct3D";
+import { createCss } from "@utils";
+import style from "./Home.module.scss";
+const css = createCss(style);
+
+const Banner3D = lazy(() => import("../../src/components/Banner3D/Banner3D"));
 
 function Home() {
-  return <div className="home">
+  return <div className={css('home')} >
     <Navbar />
     <Carousel />
     <ContainerCardProduct>
@@ -18,18 +22,13 @@ function Home() {
         titleProd="John fool"
         description="Zapatillas John Fool Art 320 Hombre/Mujer Urbanas (34/45)" />
     </ContainerCardProduct>
-    {/* 3d product */}
-
-    {/* <BuyProduct3D /> */}
-
-    {/* </CanvasProduct> */}
     <BannerSuscription />
-    {/* banner */}
-    <picture className="home__picture">
+    <picture className={css('home__picture')}>
       <img loading="lazy"
         src="../images/fake_promo_large.png" alt="promo_img" />
     </picture>
-    <footer className="home__footer">
+    {/* <Banner3D /> */}
+    <footer className={css('home__footer')}>
       <div className="home__footer--content">
         <img src="../images/fake_footer.png" alt="false footer" />
         <p>
