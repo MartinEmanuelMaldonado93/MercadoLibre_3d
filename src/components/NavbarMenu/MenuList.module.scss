@@ -1,10 +1,9 @@
-@use "gs/utils" as u;
-@use "gs/colors" as c;
+@use "@gs/utils" as u;
 
 .navmenu {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--meli-yellow);
+    max-width: 25rem;
 
     &__envios {
         width: 100%;
@@ -34,3 +33,21 @@
         display: none;
     }
 }
+
+/* Media Queries */
+
+/* mobile-l 425px */
+@media (min-width: 26.56rem) {}
+
+/* tablet 768px */
+@media (min-width: 43.75rem) {}
+
+/* laptop 1024px */
+@media (min-width: 64rem) {}
+
+/* laptop-l 1440px */
+@media (min-width: 90rem) {}
+
+/* 4k 2560px */
+
+@media (min-width: 160rem) {}

@@ -7,31 +7,30 @@ const css = createCss(style);
 
 export default function SearchBar() {
   return (
-    <div className={css("navbar")}>
-      <div className={css('navbar__container')}>
-        <img className={css("navbar__logo")}
-          src="../logos/logoMeli.png" alt="navbar logo" />
+    <div className={css("searchbar")}>
 
-        <div className={css("navbar__searchbar")}>
-          <div className={css("navbar__searchbar--icon")}>
-            <FaSistrix />
-          </div>
-          <input className={css('navbar__searchbar--input')} type={'text'} placeholder={"Buscar productos, marcas y  más..."} />
-          <div className={css('navbar__searchbar--menu')}>
-            <FiMenu />
-            <FiShoppingCart />
-          </div>
+      <img className={css("searchbar__logo")}
+        src="../logos/logoMeli.png" alt="navbar logo" />
+
+      <div className={css("searchbar__search")}>
+        <div className={css("searchbar__search--icon")}>
+          <FaSistrix />
         </div>
+        <input className={css('searchbar__search--input')} type={'text'} placeholder={"Buscar productos, marcas y  más..."} />
+        <div className={css('searchbar__search--menu')}>
+          <FiMenu />
+          <FiShoppingCart />
+        </div>
+      </div>
 
-        <a className={css("navbar__banner")} href="">
-          <img src="../logos/disney1.png" alt="" />
-          <p>
-            Suscribite al nivel 6 por solo
-            <span>
-              $399
-            </span>
-          </p>
-        </a>
+      <div className={css("searchbar__banner")} >
+        <img src="../logos/disney1.png" alt="" />
+        <p>
+          Suscribite al nivel 6 por solo
+          <span>
+            $399
+          </span>
+        </p>
       </div>
     </div>
   )

@@ -9,13 +9,13 @@ import BuyProduct3D from './BuyProduct3D/BuyProduct3D';
 const routerHome = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-    children: [
-      {
-        // path: "/about",
-        // element: <About />
-      }
-    ]
+    element: <BuyProduct3D />,
+    // children: [
+    //   {
+    //     path: "/buyproduct3d",
+    //     element: <BuyProduct3D />
+    //   }
+    // ]
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

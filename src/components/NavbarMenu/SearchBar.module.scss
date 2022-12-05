@@ -1,23 +1,17 @@
-@use "gs/utils" as u;
-// @use "gs/colors" as c;
+@use "@gs/utils" as u;
 
 $nav_height: 4.1rem;
 $searchbar_height: 0.4rem;
 $input-radius: .2em;
 
-.navbar {
-  width: 100%;
+.searchbar {
   display: flex;
   justify-content: center;
-  background-color: var(--meli-yellow);
-  font-size: var(--fs-200);
   padding-inline: 1em;
   padding-block: .4em;
-
-  &__container {
-    width: 100%;
-    // max-width: u.pxToEm(450); //temp
-  }
+  font-size: var(--fs-200);
+  max-width: 25rem;
+  min-width: 100%;
 
   &__logo {
     // border: 1px solid red;
@@ -27,10 +21,9 @@ $input-radius: .2em;
     width: 100%;
   }
 
-  &__searchbar {
+  &__search {
     display: flex;
-    // width: 100%;
-
+    min-width: 100%;
     &--icon {
       padding: .3em;
       border-start-start-radius: .2em;

@@ -1,21 +1,22 @@
-import React, { ReactNode, CSSProperties } from "react";
+import React from "react";
+import { createCss } from "@utils";
+import style from "./ContainerCardProduct.module.scss";
 
+const css = createCss(style);
 type props = {
     children?: JSX.Element | JSX.Element[],
 }
 const ContainerCardProduct = ({ children }: props) => {
-    const css: CSSProperties = {
-        display: "grid",
-        placeContent: "center",
-        placeItems: "center",
-        margin: "2rem",
-        perspective: "800px",
-        transformStyle: "preserve-3d",
-        perspectiveOrigin: "center center",
-    };
-    return <div style={css}>
-        {children}
-    </div>;
+    return (
+        <div className={css('container')}>
+            {/* <div className={css('container__title')}>
+                Producto destacado:
+            </div> */}
+            <div className={css('container__card')}>
+                {children}
+            </div>
+        </div>
+    );
 }
 
 export default ContainerCardProduct;

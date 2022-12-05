@@ -60,7 +60,7 @@ module.exports = {
   resolve: {
     extensions: [".mjs", ".tsx", ".ts", ".js", ".json"],
     alias: {
-      "gs": path.resolve(__dirname, "../src/global_sass"),
+      "@gs": path.resolve(__dirname, "../src/global_sass"),
       "@components": path.resolve(__dirname, "../src/components"),
       "@utils": path.resolve(__dirname, "../utils")
     }

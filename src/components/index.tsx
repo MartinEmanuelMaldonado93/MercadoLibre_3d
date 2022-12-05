@@ -6,4 +6,5 @@ import ContainerCardProduct from "./ContainerCardProducts/ContainerCardProduct";
 import CanvasProduct from "./CanvasProduct/CanvasProduct";
 import Iphone13 from "./3Dmodels/Iphone13";
 import Banner3D from "./Banner3D/Banner3D";
-export { Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription, Banner3D, CanvasProduct, Iphone13 };
+import SpinnerLoading from "./SpinerLoading/SpinnerLoading";
+export { Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription, Banner3D, CanvasProduct, Iphone13, SpinnerLoading };

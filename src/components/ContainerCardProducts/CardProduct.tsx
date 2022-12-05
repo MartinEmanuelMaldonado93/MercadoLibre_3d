@@ -28,18 +28,14 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
     if (!previousTime.current) {
       previousTime.current = time;
     }
-    if (!isOnMove) {
-      console.log("canceled 1 ")
-      // console.log(`diffX abs = ${Math.abs(prevX.current - x.current)}`);
-      if (Math.abs(prevX.current - x.current) < 0.05) {
-        console.log("Cancell 2")
-        console.log("last state ")
-        prevX.current = 0;
-        prevY.current = 0;
-        cancelAnimationFrame(RAF_ID.current);
-        return;
-      }
+
+    if (!isOnMove && Math.abs(prevX.current - x.current) < 0.05) {
+      prevX.current = 0;
+      prevY.current = 0;
+      cancelAnimationFrame(RAF_ID.current);
+      return;
     }
+
     // Rotation with Lerp ( A/2 + B/2 )
     prevX.current = (prevX.current + (x.current - prevX.current) * 0.075);// static 15%
     prevY.current = (prevY.current + (y.current - prevY.current) * 0.075);
@@ -67,29 +63,18 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
     previousTime.current = time;
   }
   useEffect(() => {
-    //console.count("useEfect ");
-
     RAF_ID.current = requestAnimationFrame(animate);
 
     return () => {
-      // console.log("cleanUp")
-      // cancelAnimationFrame(RAF_ID.current);
-      // setTimeout(() => {
-      //   console.log("cleanUp")
       cancelAnimationFrame(RAF_ID.current);
-
-      // }, 2000);
-
     }
   }, [isOnMove]);
 
   function onPointerMove(event: any) {
     const e = event.touches ? event.touches[0] : event;
-    console.log(e);
     if (!isOnMove) {
       prevX.current = e.clientX + 0.5;
       prevY.current = e.clientY + 0.5;
-      //console.log(` x-m: ${e.clientX} x-y: ${e.clientY}`)
       setEnter(true);
       return;
     }
@@ -99,14 +84,7 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
   }
 
   function onPointerLeave(e: any) {
-    //todo: reset function
-    // console.log(`leave ${isOnMove}`)
-    if (isOnMove) {
-      // x.current = 1;
-      // y.current = -1;
-
-      setEnter(false);
-    }
+    isOnMove && setEnter(false);
   }
 
   return (
@@ -114,14 +92,22 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
       ref={card}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}>
-      
-      <div className={css('card__title')}
-      >{titleProd ?? ""}</div>
+
+      <div className={css('card__title')}>{titleProd ?? ""}</div>
       <img className={css('card__img')}
         src={imgUrl} alt="red shoes" />
       <div className={css("card__content")}>
-        <span>${price}</span>
-        <span>
+
+        <div className={css('card__content--stars')}>
+            <div>⭐</div>
+            <div>⭐</div>
+            <div>⭐</div>
+            <div>⭐</div>
+            <div>⭐</div>
+        </div>
+        
+        <span className={css('card__content--price')}>${price}</span>
+        <span className={css('card__content--ship')}>
           {freeShip ? "Envío gratis !" : ""}
         </span>
         <p className={css('card__paragraph')}>
@@ -130,7 +116,7 @@ function CardPrice({ imgUrl, price, titleProd, description, freeShip }: props) {
             "Lorem ipsum Lorem ipsum lroemasdomsadomsad asdsd"}
         </p>
       </div>
-    </div >
+    </div>
   )
 }
 export default CardPrice;

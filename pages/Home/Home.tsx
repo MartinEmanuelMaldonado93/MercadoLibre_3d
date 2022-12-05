@@ -5,6 +5,7 @@ import {
 import { Link, Route, Routes } from "react-router-dom";
 import BuyProduct3D from "pages/BuyProduct3D/BuyProduct3D";
 import { createCss } from "@utils";
+
 import style from "./Home.module.scss";
 const css = createCss(style);
 
@@ -27,7 +28,7 @@ function Home() {
       <img loading="lazy"
         src="../images/fake_promo_large.png" alt="promo_img" />
     </picture>
-    {/* <Banner3D /> */}
+    <Banner3D />
     <footer className={css('home__footer')}>
       <div className="home__footer--content">
         <img src="../images/fake_footer.png" alt="false footer" />

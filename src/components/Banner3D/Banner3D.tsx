@@ -10,7 +10,6 @@ import GamingChair1 from '../3Dmodels/GamingChair1';
 import { Suspense } from 'react';
 import { createCss } from '@utils';
 import SpinnerLoading from '../SpinerLoading/SpinnerLoading';
-//performance={{ max: 0.3 }} gl={{ antialias: false }}
 
 const css = createCss(style);
 export default function Banner3D() {
@@ -25,16 +24,14 @@ export default function Banner3D() {
         <button className={css('banner3D__btn')}>
           <Link
             style={{ textDecoration: 'none', color: 'white' }}
-            to='' >Ver más</Link>
+            to='buyproduct3d' >Ver más</Link>
         </button>
       </div>
 
       <div className={css('banner3D__canvas')}>
         <Suspense fallback={<SpinnerLoading />}>
-          <Canvas camera={{
-            position: [0, 0.5, 12],
-            fov: 45, near: 0.1, far: 100
-          }}
+          <Canvas
+            camera={{ position: [0, 0.5, 12], fov: 45, near: 0.1, far: 100 }}
             frameloop="demand"
             dpr={[1, 2]}>
             <ambientLight intensity={0.7} />

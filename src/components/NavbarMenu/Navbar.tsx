@@ -1,11 +1,13 @@
 import React from 'react'
 import SearchBar from './SearchBar';
 import NavMenuList from './MenuList';
-import './Navbar';
+import style from './Navbar.module.scss';
+import { createCss } from '@utils';
+const css = createCss(style);
 
 function Navbar() {
   return (
-    <div className='navbar'>
+    <div className={css('navbar')}>
       <SearchBar />
       <NavMenuList />
     </div>

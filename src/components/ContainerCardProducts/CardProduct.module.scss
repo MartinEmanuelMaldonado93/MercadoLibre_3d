@@ -1,20 +1,16 @@
-$c-price: rgba(0,0,0,.8);
+$c-price: rgba(0, 0, 0, .8);
 $c-green: green;
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 12rem;   
-    border-radius: 5px ; 
-    background-color: white; 
-    background: radial-gradient( 
-    farthest-corner at 
-    var(--mouseX) var(--mouseY),
-    rgb(255, 255, 255) 0%,
-    hsl(0 1% 56% / .2) 100%);
+    max-width: 12rem;
+    border-radius: 5px;
+    background: radial-gradient(farthest-corner at var(--mouseX) var(--mouseY),
+            rgb(255, 255, 255) 0%,
+            hsl(0 1% 56% / .2) 100%);
     padding: 0.5em;
-    // transition: .6s;
     cursor: pointer;
     touch-action: none;
     transform-style: preserve-3d;
@@ -23,51 +19,67 @@ $c-green: green;
     --y-shadow: 0px;
     box-shadow: var(--x-shadow) var(--y-shadow) 10px 3px grey;
     // box-shadow: 0px 0px 5px 4px gray;
-    border:1px solid gray;
+    border: 1px solid gray;
 
-    > * {
+    >* {
         transform-style: preserve-3d;
         touch-action: none;
         user-select: none;
     }
+
     /* rotation */
     --deg: 45deg;
-    transform:  
-    rotateX(
-        calc(var(--deg) * var(--rotX,0))
-    )
-    rotateY(
-        calc(var(--deg) * var(--rotY,0))
-    );
+    transform: rotateX(calc(var(--deg) * var(--rotX, 0))) rotateY(calc(var(--deg) * var(--rotY, 0)));
 
     &__img {
         width: 100%;
-        object-fit : scale-down;
+        object-fit: scale-down;
         box-sizing: border-box;
         border-radius: 0.3em;
-        border-bottom:1px solid lightgray;
+        border-bottom: 1px solid lightgray;
     }
+
     &__title {
-        font-size:var(--fs-400);
+        font-size: var(--fs-400);
         color: hsl(0, 0%, 0%, .6);
         font-weight: 600;
     }
+
     &__content {
+        &--stars {
+            display: flex;
+            transform-style: preserve-3d;
+            div {
+                transition: transform .6s;
+            }
+            div:hover {
+               transform: translate3D(0, 0, 1rem) scale(1.3);
+            }
+            div:hover:nth-child(even) {
+                transform: translate3D(0, 0, 1rem) rotateZ(360deg) scale(1.3);                
+            }
+            div:last-child:hover {
+                transform: translate3D(0, 0, 1rem) rotateZ(360deg) scale(1.3);
+            }
+        }      
+
         /* price */
-        span:first-child {
+        &--price {
             font-size: var(--fs-400);
-            color: $c-price;
         }
+
         /* free ship*/
-        span:nth-child(2){
+        &--ship {
             display: block;
             color: $c-green;
             transition: all .5s;
         }
-        span:nth-child(2):hover {
-            transform: translate3D(0,0, 1rem);
+
+        &--ship:hover {
+            transform: translate3D(0, 0, 1rem);
         }
     }
+
     &__paragraph {
         padding: .2em .3em;
         border-radius: .3em;
@@ -76,3 +88,24 @@ $c-green: green;
         word-wrap: break-word;
     }
 }
+
+/* Media Queries */
+
+/* mobile-m 375px */
+@media (min-width: 23.43rem) {}
+
+/* mobile-l 425px */
+@media (min-width: 26.56rem) {}
+
+/* tablet 768px */
+@media (min-width: 43.75rem) {}
+
+/* laptop 1024px */
+@media (min-width: 64rem) {}
+
+/* laptop-l 1440px */
+@media (min-width: 90rem) {}
+
+/* 4k 2560px */
+
+@media (min-width: 160rem) {}

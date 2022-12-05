@@ -1,15 +1,16 @@
-@use "gs/colors" as c;
-@use "gs/utils" as u;
-@use "gs/global";
+@use "../../src/global_sass/utils" as u;
+@use "@gs/global";
 
 .home {
-  background-color: c.$bg-page;
+  background-color: var(--bg-page);
   margin: 0 auto;
 
   font-size: var(--fs-200);
   cursor: pointer;
 
   &__picture {
+    padding-inline: 1em;
+
     img {
       max-width: 100%;
       // box-sizing: border-box;

@@ -9,14 +9,15 @@
     --fs-800: clamp(2.33rem, 1.2rem + 5.69vw, 5.25rem);
     --fs-900: clamp(2.8rem, 1rem + 9.01vw, 7.42rem);
 
-    --bg-page: #ebebeb;
-    --meli-yellow: #fff159;
-    --meli-blue: #3483fa;
-    --meli-text: rgb(64, 63, 63);
+    --bg-page: hsl(0, 0%, 92%);
+    --meli-yellow: hsl(55, 100%, 67%);
+    --meli-blue: hsl(216, 95%, 59%);
+    --meli-blue-light: hsl(195, 53%, 79%);
+    --meli-text: hsl(0, 1%, 25%);
     --meli-text-light: lightgray;
-    --meli-ship: #00a650;
-    --btn-color: rgba(255, 255, 255, 0.839);
+    --meli-ship: hsl(149, 100%, 33%);
+    --btn-color: hsla(0, 0%, 100%, 0.839);
     --btn-box-shadow: 2px 2px 2px gray;
     --input-box-shadow: 1px 1px 2px gray;
-    --transparent-border: 1px solid rgb(222, 222, 222);
+    --transparent-border: 1px solid hsl(0, 0%, 87%);
 }

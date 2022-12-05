@@ -1,113 +1,134 @@
-import React, { useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import style from "./BuyProduct3D.module.scss";
 // Components
-import { Navbar, CanvasProduct, Iphone13 } from "@components";
+import { Navbar, Iphone13, SpinnerLoading } from "@components";
 import { FaShippingFast, FaStar, FaUndo } from 'react-icons/fa';
 import { createCss } from '@utils';
+import { Float, Environment, OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 const css = createCss(style);
 
-const enviroments = [
-  'royal_esplanade_1k.hdr',
-  'hdrs/autumn_forest_04_1k.hdr',
-  'hdrs/ehingen_hillside_1k.hdr',
-  'hdrs/park_parking_1k.hdr',
-  'hdrs/provence_studio_1k.hdr'
-];
-interface props {
-  children?: React.ReactNode,
-}
-/** Page */
-function BuyProduct3D({ children }: props) {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-  const [option, setOption] = useState<number>(0);
+const Enviroments = {
+  1: 'royal_esplanade_1k.hdr',
+  2: 'hdrs/autumn_forest_04_1k.hdr',
+  3: 'hdrs/ehingen_hillside_1k.hdr',
+  4: 'hdrs/park_parking_1k.hdr',
+  5: 'hdrs/provence_studio_1k.hdr'
+};
+function BuyProduct3D() {
+  const [activateBackground, setActivateBackground] = useState<boolean>(false);
+  const [option, setOption] = useState<keyof typeof Enviroments>(1);
+  const Options = useRef<HTMLDivElement>();
+  const toggleOpacity = useRef<Boolean>(true);
 
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
+  const handleActivateBackground = () => {
+    setActivateBackground(prev => !prev);
+    // activate animation
+    const optionsContainer = Options.current;
+    const optChildrens = optionsContainer.getElementsByTagName("div");
+
+    for (let i = 0; i < optChildrens.length; ++i) {
+      const child = optChildrens[i];
+      child.style.transitionDelay = `0.${i + 1}s`;
+      child.style.opacity = toggleOpacity.current ? "1" : "0";
+    }
+    toggleOpacity.current = !toggleOpacity.current;
   };
 
   return (
     <>
       <Navbar />
       <div className={css('product')} >
-        <div className='canvas'>
-          <CanvasProduct activarfondo={isChecked}
-            fondo={enviroments[option]} >
-            {/* {children} */}
-            {/* <Iphone13 /> */}
-          </CanvasProduct>
-          <div className="canvas__controls">
-            <input
-              className="canvas__controls__input"
-              id="controls__input"
-              type="checkbox"
-              onClick={handleOnChange} />
+        <div className={css('scene')}>
+          {/* <SpinnerLoading /> */}
+          <Suspense fallback={<SpinnerLoading />}>
+            <Canvas className={css('scene__canvas')}
+              camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }}
+              frameloop="demand"
+              dpr={[1, 2]}>
+              <ambientLight intensity={0.7} />
+              <pointLight position={[-5, -5, -5]} intensity={4} />
+              <pointLight position={[3, 3, -5]} />
 
-            <div className="canvas__controls__checkbox"
-              id="controls__checkbox">
-              <span className='checkbox__activar-fondo'>
-                Activar fondo
-              </span>
-              <label
-                className='checkbox__label'
-                id='checkbox__label'
-                htmlFor='controls__input'></label>
+              <Float
+                position={[0, -0.7, 0]}
+                rotation={[0.1, 0, 0]}
+                rotationIntensity={3}
+                floatIntensity={2}
+                speed={2} >
+                <Iphone13 />
+              </Float>
+
+              <Environment ground
+                background={activateBackground}
+                files={Enviroments[option]} />
+              <OrbitControls
+                minDistance={2}
+                maxDistance={16}
+                enableDamping={true}
+                enableZoom={true}
+                enablePan={false} />
+            </Canvas>
+          </Suspense>
+          <div className={css('scene__controls')}>
+            <div className={css('scene__controls--input')}
+              onClick={handleActivateBackground}>
+              Activar fondo
             </div>
-
-            <div id="controls__options" className='canvas__controls__options' >
-              <div className="options__option" onClick={() => setOption(0)}>Shopping Center</div>
-              <div className="options__option" onClick={() => setOption(1)}>Temporada de Otoño</div>
-              <div className="options__option" onClick={() => setOption(2)}>Colinas soleadas</div>
-              <div className="options__option" onClick={() => setOption(3)}>Parque Campestre</div>
-              <div className="options__option" onClick={() => setOption(4)}>Estudio Fotografía</div>
+            <div ref={Options} className={css('scene__controls--options')} >
+              <div onClick={() => setOption(1)}>Shopping Center</div>
+              <div onClick={() => setOption(2)}>Temporada de Otoño</div>
+              <div onClick={() => setOption(3)}>Colinas soleadas</div>
+              <div onClick={() => setOption(4)}>Parque Campestre</div>
+              <div onClick={() => setOption(5)}>Estudio Fotografía</div>
             </div>
           </div>
         </div>
-        <div className='other-products'>
-          {/* CardPricesssssss */}
-          {/* Características */}
-          {/* Descripcion */}
-          {/* preguntas y respuestas  */}
-          {/* PREGUNTAS */}
-          {/* OPINIONES */}
-        </div>
-        <aside className='aside'>
-          <div className="nuevo-vendido">Nuevo | 232.999 vendidos</div>
-          <div className='title'>Apple iPhone 12 Pro Max (256GB) - Perla </div>
-          <div className="stars">
+        {/* <div className='other-products'> */}
+        {/* CardPricesssssss */}
+        {/* Características */}
+        {/* Descripcion */}
+        {/* preguntas y respuestas  */}
+        {/* PREGUNTAS */}
+        {/* OPINIONES */}
+        {/* </div> */}
+        <aside className={css('aside')} >
+          <div className={css('aside__nuevo-vendido')}>Nuevo | 232.999 vendidos</div>
+          <div className={css('aside__title')}>Apple iPhone 12 Pro Max (256GB) - Perla </div>
+          <div className={css('aside__stars')}>
             <span>
               <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
             </span>
-            45 opiniones</div>
-          <div className="mas-vendido">
-            <span id='span'>MÁS VENDIDO</span>1° en Smarthphones</div>
-          <div className="precio">$256.511
-            <span>Pagá en cuotas</span></div>
-          <div className="envios">
-            <span>Llega gratis mañana
+            45 opiniones
+          </div>
+          <div className={css('aside__mas-vendido')}>
+            <span>MÁS VENDIDO</span> 1° en Smarthphones
+          </div>
+          <div className={css('aside__precio')}>
+            $256.511<span>Pagá en cuotas</span>
+          </div>
+          <div className={css('aside__envios')}>
+            <span>
+              Llega gratis mañana
               <FaShippingFast />
             </span>
             Ver formas de entrega
-            <span>Devolución gratis
+            <span>
+              Devolución gratis
               <FaUndo />
             </span>
             Conocer más
           </div>
-          <div className="ultima-disponible"></div>
-          <div className="compra">
-            <div className="btn-comprar">
-              Comprar Ahora
-            </div>
-            <div className="btn-carrito">
-              Agregar al Carrito
-            </div>
-
+          <div className={css('aside__btn-comprar')}>
+            Comprar Ahora
+          </div>
+          <div className={css('aside__btn-carrito')}>
+            Agregar al Carrito
           </div>
           {/* informacion al vendedor */}
-
         </aside>
       </div>
-
-      <footer className='footer'>
+      <footer className={css('footer')}>
         <h6>**Disclaimer**
           Demo ficticia sin ninguna funcionalidad, solo el único propósito de fomentar nuevas ideas
           y productos dentro de la comunidad web**
