@@ -3,16 +3,19 @@
     align-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    padding: .5em;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0px 5px 10px 4px lightgray;
-    animation: lightning infinite 5s ease-in-out;
+    margin: 2em;
+    max-width: var(--max-bound);
+
+    &__content {
+        background-color: white;
+        border-radius: .4em;
+        box-shadow: 0px 5px 10px 4px lightgray;
+        animation: lightning infinite 5s ease-in-out;
+    }
 
     &__title {
         align-self: center;
-
+        padding: 1em;
         &--subtitle {
             h4 {
                 letter-spacing: 3px;
@@ -20,33 +23,35 @@
             }
 
             h1 {
-                font-size: var(--fs-500);
+                font-size: calc(var(--fs-500) - 1vw);
                 user-select: none;
+            }
+        }
+
+        &--link {
+            display: inline-block;
+            position: relative;
+            z-index: 5;
+            margin-top: 2em;
+            padding: .8em;
+            font-size: var(--fs-300);
+            color: white;
+            border-radius: 10px;
+            background-color: rgb(41, 129, 237);
+            transition: background-color 0.7s;
+
+            &:hover {
+                background-color: rgb(25, 77, 140);
             }
         }
     }
 
-    &__btn {
-        position: absolute;
-        padding: 1rem;
-        font-size: .8rem;
-        z-index: 5;
-        border: none;
-        border-radius: 10px;
-        background-color: rgb(41, 129, 237);
-        color: white;
-        transition: background-color 0.7s;
-
-        &:hover {
-            background-color: rgb(25, 77, 140);
-        }
-    }
-
     &__canvas {
+        position: static;
         border-radius: .4em;
         height: auto;
         padding-top: .5em;
-        margin-top: -4rem; 
+        margin-top: -8rem;
 
         &:hover {
             cursor: grab;
@@ -83,9 +88,8 @@
 
 /* tablet 768px */
 @media (min-width: 43.75rem) {
-    .banner3D {
-        padding: 2rem;
-    }
+    // .banner3D {
+    // }
 }
 
 /* laptop 1024px */

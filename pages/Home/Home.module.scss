@@ -2,19 +2,19 @@
 @use "@gs/global";
 
 .home {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
   background-color: var(--bg-page);
-  margin: 0 auto;
-
   font-size: var(--fs-200);
-  cursor: pointer;
 
   &__picture {
+    max-width: var(--max-bound);
     padding-inline: 1em;
 
     img {
-      max-width: 100%;
-      // box-sizing: border-box;
-      // object-fit: contain;
+      // max-width: 100%;
+      width: 100%;
     }
   }
 }

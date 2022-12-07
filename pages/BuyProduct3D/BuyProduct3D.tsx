@@ -40,11 +40,16 @@ function BuyProduct3D() {
       <Navbar />
       <div className={css('product')} >
         <div className={css('scene')}>
-          {/* <SpinnerLoading /> */}
+          <div className={css('scene__canvas')}>
           <Suspense fallback={<SpinnerLoading />}>
             <Canvas className={css('scene__canvas')}
-              camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }}
-              frameloop="demand"
+                camera={
+                  {
+                    position: [0, 0, 6],
+                    fov: 65,
+                    near: 1,
+                    far: 500
+                  }}
               dpr={[1, 2]}>
               <ambientLight intensity={0.7} />
               <pointLight position={[-5, -5, -5]} intensity={4} />
@@ -61,7 +66,7 @@ function BuyProduct3D() {
 
               <Environment ground
                 background={activateBackground}
-                files={Enviroments[option]} />
+                files={Enviroments[option]}/>
               <OrbitControls
                 minDistance={2}
                 maxDistance={16}
@@ -70,6 +75,7 @@ function BuyProduct3D() {
                 enablePan={false} />
             </Canvas>
           </Suspense>
+          </div>
           <div className={css('scene__controls')}>
             <div className={css('scene__controls--input')}
               onClick={handleActivateBackground}>
@@ -84,8 +90,6 @@ function BuyProduct3D() {
             </div>
           </div>
         </div>
-        {/* <div className='other-products'> */}
-        {/* CardPricesssssss */}
         {/* Características */}
         {/* Descripcion */}
         {/* preguntas y respuestas  */}

@@ -1,36 +1,42 @@
 @use "@gs/utils" as u;
 
 .navmenu {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 25rem;
-
-    &__envios {
+    width: 100%;
+    max-width: var(--max-bound);
+    padding-inline: 1em;
+    padding-block: .5em;
+    color: var(--meli-text);
+    &__shipping {
         width: 100%;
         display: flex;
         align-items: center;
         gap: .5em;
-
+        font-size: var(--fs-300);
         svg {
-            // display: inline-flex;
             width: min-content;
         }
 
-        // border: 1px solid red;
         div span {
             margin-inline: .5em;
         }
 
     }
 
-    &__choices {
-        border: 1px solid red;
+    &__categories {
         display: none;
+        cursor: pointer;
     }
 
     &__user {
-        border: 1px solid green;
         display: none;
+        svg{
+            display: inline;
+            width: min-content;
+            margin-inline: .4em;
+        }
+        div:nth-child(2){
+            white-space: nowrap;
+        }
     }
 }
 
@@ -38,12 +44,78 @@
 
 /* mobile-l 425px */
 @media (min-width: 26.56rem) {}
+/* 600px */
+@media (min-width: 37.5rem){
+    .navmenu {
+        display: flex;
+        justify-content: space-between;
+        font-size: var(--fs-300);
 
+        &__shipping {
+            // border: 1px solid red;
+            width: initial;
+            svg {
+                font-size: 1.3rem;
+            }
+            div span {
+                display: block;
+            }
+        }
+
+        &__categories {
+            display: flex;
+            align-items: center;
+            gap: .5em;
+            div ~ div {
+                display: none;
+            }
+
+        }
+
+        &__user {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            margin-left: 1.5em;
+            div ~ div {
+                display: none;
+            }
+        }
+    }
+}
 /* tablet 768px */
-@media (min-width: 43.75rem) {}
+@media (min-width: 43.75rem) {
+    
+}
 
 /* laptop 1024px */
-@media (min-width: 64rem) {}
+@media (min-width: 64rem) {
+    .navmenu { 
+
+        &__shipping { 
+            width: initial;
+            svg {
+                font-size: 1.3rem;
+            }
+            div span {
+                display: inline;
+            }
+        }
+
+        &__categories { 
+            div ~ div {
+                display: inherit;
+            }
+        }
+
+        &__user {
+            margin-left: 0em;
+            div ~ div {
+                display: inherit;
+            }
+        }
+    }
+}
 
 /* laptop-l 1440px */
 @media (min-width: 90rem) {}

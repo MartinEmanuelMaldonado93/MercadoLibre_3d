@@ -49,19 +49,15 @@ $c-green: green;
         &--stars {
             display: flex;
             transform-style: preserve-3d;
+
             div {
                 transition: transform .6s;
             }
+
             div:hover {
-               transform: translate3D(0, 0, 1rem) scale(1.3);
+                transform: translate3D(0, 0, 1rem) scale(1.3);
             }
-            div:hover:nth-child(even) {
-                transform: translate3D(0, 0, 1rem) rotateZ(360deg) scale(1.3);                
-            }
-            div:last-child:hover {
-                transform: translate3D(0, 0, 1rem) rotateZ(360deg) scale(1.3);
-            }
-        }      
+        }
 
         /* price */
         &--price {

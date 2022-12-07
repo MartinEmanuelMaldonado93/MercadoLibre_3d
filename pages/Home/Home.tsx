@@ -1,15 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import {
-  Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription
+  Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription, Banner3D
 } from "@components";
-import { Link, Route, Routes } from "react-router-dom";
-import BuyProduct3D from "pages/BuyProduct3D/BuyProduct3D";
 import { createCss } from "@utils";
 
 import style from "./Home.module.scss";
 const css = createCss(style);
-
-const Banner3D = lazy(() => import("../../src/components/Banner3D/Banner3D"));
 
 function Home() {
   return <div className={css('home')} >

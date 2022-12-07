@@ -7,7 +7,7 @@
 }
 
 .ldsRoller div {
-    translate: 60% 0;
+    translate: 40% 0;
     --easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
     animation: ldsRoller 2s var(--easeOutBack) infinite;
     transform-origin: 40px 40px;
@@ -22,6 +22,7 @@
     height: 7px;
     border-radius: 50%;
     background: var(--meli-blue);
+    background: attr(data-color);
     margin: -4px 0 0 -4px;
 }
 

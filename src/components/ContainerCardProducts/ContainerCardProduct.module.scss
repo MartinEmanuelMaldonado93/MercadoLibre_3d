@@ -1,6 +1,6 @@
 .container {
     color: var(--meli-text);
-
+    max-width: var(--max-bound);
     &__title {
         display: inline;
         font-size: var(--fs-500);

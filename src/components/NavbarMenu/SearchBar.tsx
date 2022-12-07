@@ -8,9 +8,8 @@ const css = createCss(style);
 export default function SearchBar() {
   return (
     <div className={css("searchbar")}>
-
-      <img className={css("searchbar__logo")}
-        src="../logos/logoMeli.png" alt="navbar logo" />
+      <img className={css("searchbar__meli-logo")}
+        src="../logos/logoMeli.png" alt="meli logo" />
 
       <div className={css("searchbar__search")}>
         <div className={css("searchbar__search--icon")}>

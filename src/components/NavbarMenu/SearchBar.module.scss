@@ -10,13 +10,12 @@ $input-radius: .2em;
   padding-inline: 1em;
   padding-block: .4em;
   font-size: var(--fs-200);
-  max-width: 25rem;
-  min-width: 100%;
+  max-width: var(--max-bound);
+  width: 100%;
 
-  &__logo {
-    // border: 1px solid red;
+  &__meli-logo {
     display: none;
-    object-fit: cover;
+    object-fit: scale-down;
     max-width: u.pxToEm(100);
     width: 100%;
   }
@@ -24,6 +23,7 @@ $input-radius: .2em;
   &__search {
     display: flex;
     min-width: 100%;
+
     &--icon {
       padding: .3em;
       border-start-start-radius: .2em;
@@ -32,7 +32,6 @@ $input-radius: .2em;
       box-shadow: var(--input-box-shadow);
       color: var(--meli-text-light);
       font-size: var(--fs-400);
-
     }
 
     &--input {
@@ -66,9 +65,8 @@ $input-radius: .2em;
   }
 
   &__banner {
+    flex-basis: 350px;
     display: none;
-
-    // border: 1px solid red;
     img {
       display: none;
     }
@@ -79,4 +77,79 @@ $input-radius: .2em;
   }
 }
 
-@media screen and (min-width:map-get(u.$breakpoint, "medium")) {}
+/* Media Queries */
+
+/* 600px */
+@media (min-width: 37.5rem) {
+  .searchbar {
+    &__meli-logo {
+      display: block;
+      margin-right: 1em;
+    }
+
+    &__search {
+      min-width: auto;
+      width: 100%;
+
+      &--menu {
+        display: none;
+      }
+    }
+
+    &__banner {
+      display: block;
+
+      img {
+        display: inline;
+        max-width: 4rem;
+      }
+
+      p {
+        // display: inline;
+      }
+    }
+  }
+}
+
+/* tablet 768px */
+@media (min-width: 43.75rem) {
+  .searchbar {
+    &__meli-logo {
+      display: block;
+      margin-right: 1em;
+      object-fit: scale-down;
+    }
+
+    &__search {
+      min-width: auto;
+      width: 100%;
+
+      &--menu {
+        display: flex;
+      }
+    }
+
+    &__banner {
+      display: flex;
+      place-items: center;
+      img {
+        display: inline;
+        max-width: 4rem;
+      }
+
+      p {
+        display: block;
+      }
+    }
+  }
+}
+
+/* laptop 1024px */
+@media (min-width: 64rem) {}
+
+/* laptop-l 1440px */
+@media (min-width: 90rem) {}
+
+/* 4k 2560px */
+
+@media (min-width: 160rem) {}

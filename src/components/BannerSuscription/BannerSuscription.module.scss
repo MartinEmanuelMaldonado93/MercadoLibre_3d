@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     max-height: min-content;
+    max-width: var(--max-bound);
+    width: 100%;
     padding-inline: 1em;
 
     &__suscribe {
@@ -10,7 +12,7 @@
         width: 100%;
         padding: .2em .5em;
         background: linear-gradient(130deg, hsl(290, 68%, 46%) 55%, hsl(300, 48%, 60%) 60%, #0c1a51);
-        border-radius: .2em .2em 0 0;
+        border-radius: .4em .4em 0 0;
         color: white;
         font-weight: 600;
 
@@ -28,6 +30,7 @@
                 background-color: green;
                 color: white;
                 border-radius: .4em;
+                text-align: center;
             }
         }
     }
@@ -37,6 +40,7 @@
         flex-wrap: wrap;
         align-items: center;
         background-color: white;
+        padding: .5em;
     }
 
     &__logos--title {
@@ -56,7 +60,7 @@
     &__footer {
         background-color: white;
         width: 100%;
-
+        border-radius: 0 0 .4em .4em;
         button {
             float: right;
             padding: .4em .8em;
@@ -71,3 +75,34 @@
         }
     }
 }
+
+/* Media Queries */
+
+/* mobile-l 425px */
+@media (min-width: 26.56rem) {}
+
+/* tablet 768px */
+@media (min-width: 43.75rem) {
+    .banner {
+        font-size: var(--fs-300);
+
+        &__suscribe {
+            border-radius: .4em .4em 0 0;
+        }
+
+        &__logos {
+            width: 100%;
+        }
+
+    }
+}
+
+/* laptop 1024px */
+@media (min-width: 64rem) {}
+
+/* laptop-l 1440px */
+@media (min-width: 90rem) {}
+
+/* 4k 2560px */
+
+@media (min-width: 160rem) {}

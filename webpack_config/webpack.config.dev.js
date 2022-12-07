@@ -26,7 +26,8 @@ const DEVELOPMENT_CONFIG = {
   /** @type {import('webpack-dev-server').Configuration} */
   devServer: {
     port: 9000,
-    hot: true,// HMR
+    hot: true,
+    historyApiFallback: true
   },
   cache: true,
   devtool: "source-map", // "eval" is more performant but with some cons

@@ -13,7 +13,7 @@ module.exports = {
     filename: "[name].[contenthash:8].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
-    publicPath: "",
+    publicPath: "/"
   },
   context: path.resolve(__dirname),
   module: {
