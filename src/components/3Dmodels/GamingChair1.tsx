@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-
+import gamingChair from "@assets/models/GamingChair/scene.gltf"
 type GLTFResult = GLTF & {
   nodes: {
     adjustment_aiStandardSurface1_0: THREE.Mesh
@@ -35,7 +35,7 @@ type GLTFResult = GLTF & {
 
 export default function Model({ ...props }: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useGLTF('/models/GamingChair/scene.gltf') as GLTFResult;
+  const { nodes, materials } = useGLTF(gamingChair) as GLTFResult;
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

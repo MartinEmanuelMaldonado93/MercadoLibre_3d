@@ -2,6 +2,7 @@ import { Group, Mesh, MeshStandardMaterial } from 'three';
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
+import IphoneScene from "@assets/models/apple13/scene.gltf";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -60,7 +61,7 @@ type GLTFResult = GLTF & {
 }
 export default function Iphone13({ ...props }: JSX.IntrinsicElements['group']) {
   const group = useRef<Group>();
-  const { nodes, materials } = useGLTF('/models/apple13/scene.gltf') as GLTFResult;
+  const { nodes, materials } = useGLTF(IphoneScene) as GLTFResult;
 
   return (
     <group ref={group} {...props} dispose={null}>
