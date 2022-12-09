@@ -26,6 +26,7 @@
     "css-modules": "^0.3.0",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
+    "gltf-loader": "^1.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "node-sass": "^7.0.3",

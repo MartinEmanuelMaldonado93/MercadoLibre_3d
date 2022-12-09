@@ -48,10 +48,18 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif|jpeg)$/i,
+        test: /\.(png|svg|jpg|gif|jpeg|bin)$/i,
         type: "asset/resource",
         generator: {
           filename: 'assets/[hash][ext]'}
+      },
+      {
+        test: /\.(gltf)$/,
+        use: [
+          {
+            loader: "gltf-loader"
+          }
+        ]
       },
     ],
   },

@@ -7,5 +7,8 @@ declare module "*.png";
 declare module "*.PNG";
 declare module "*.jpeg";
 declare module "*.gif";
-declare module "*.gltf";
+declare module "*.gltf" {
+    const content: string;
+    export default content;
+  }
 //  "*.scss"  
