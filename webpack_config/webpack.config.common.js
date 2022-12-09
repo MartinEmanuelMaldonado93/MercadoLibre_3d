@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/i,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: [
           // "style-loader", // -- --- --- PROD
           // MiniCssExtractPlugin.loader,
@@ -51,8 +51,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif|jpeg)$/i,
         type: "asset/resource",
         generator: {
-          outputPath: "./assets",
-        },
+          filename: 'assets/[hash][ext]'}
       },
     ],
   },
@@ -62,7 +61,8 @@ module.exports = {
     alias: {
       "@gs": path.resolve(__dirname, "../src/global_sass"),
       "@components": path.resolve(__dirname, "../src/components"),
-      "@utils": path.resolve(__dirname, "../utils")
+      "@utils": path.resolve(__dirname, "../utils"),
+      "@assets": path.resolve(__dirname, "../public"),
     }
   },
   performance: {

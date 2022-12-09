@@ -45,7 +45,7 @@ function BuyProduct3D() {
             <Canvas className={css('scene__canvas')}
                 camera={
                   {
-                    position: [0, 0, 6],
+                    position: [0, 0, 5],
                     fov: 65,
                     near: 1,
                     far: 500

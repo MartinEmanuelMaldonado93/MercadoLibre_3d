@@ -9,7 +9,6 @@ const speedMeasure = require("speed-measure-webpack-plugin");
 const DEVELOPMENT_CONFIG = {
   mode: "development",
   output: {
-    filename: '[name].bundle.js',
     clean: true,
   },
   module: {
@@ -32,11 +31,6 @@ const DEVELOPMENT_CONFIG = {
   cache: true,
   devtool: "source-map", // "eval" is more performant but with some cons
   target: "web",
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: "all",
-  //   }
-  // },
   stats: {
     loggingDebug: ["sass-loader"],
   },

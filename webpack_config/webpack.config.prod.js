@@ -1,5 +1,5 @@
 const common = require("./webpack.config.common.js");
-const { mergeWithRules } = require("webpack-merge");
+const { mergeWithRules, merge } = require("webpack-merge");
 const speedMeasure = require("speed-measure-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const swc = require("@swc/core");
@@ -8,12 +8,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PRODUCTION_CONFIG = {
   mode: "production",
   optimization: {
-    // minimize: true,
-    // minimizer:[swc.minify],
     splitChunks: {
       chunks: "all",
     },
   },
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       // sass - css 
@@ -23,10 +22,9 @@ const PRODUCTION_CONFIG = {
       },
     ]
   },
-  plugins: [new MiniCssExtractPlugin()]
 };
 
-// const production = merge(common, PROD_CONFIG); // old way
+// const production = merge(common, PRODUCTION_CONFIG); // old way
 const OBJECT_RULE = {
   module: {
     rules: {
