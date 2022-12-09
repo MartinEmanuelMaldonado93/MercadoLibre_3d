@@ -3,7 +3,7 @@ import {
   Navbar, Carousel, CardProduct, ContainerCardProduct, BannerSuscription, Banner3D
 } from "@components";
 import { createCss } from "@utils";
-
+import "@assets/logos/icomeli.png";
 import style from "./Home.module.scss";
 import redShoes from "@assets/images/products/redshoes.jpg";
 import fakePromo from "@assets/images/fake_promo_large.png";

@@ -3,13 +3,16 @@ import style from './SearchBar.module.scss';
 import { FaSistrix } from "react-icons/fa";
 import { FiMenu, FiShoppingCart } from "react-icons/fi";
 import { createCss } from "@utils";
+import logoMeli from "@assets/logos/logoMeli.png";
+import logoDisney from "@assets/logos/disney1.png";
+
 const css = createCss(style);
 
 export default function SearchBar() {
   return (
     <div className={css("searchbar")}>
       <img className={css("searchbar__meli-logo")}
-        src="../logos/logoMeli.png" alt="meli logo" />
+        src={logoMeli} alt="meli logo" />
 
       <div className={css("searchbar__search")}>
         <div className={css("searchbar__search--icon")}>
@@ -23,7 +26,7 @@ export default function SearchBar() {
       </div>
 
       <div className={css("searchbar__banner")} >
-        <img src="../logos/disney1.png" alt="" />
+        <img src={logoDisney} alt="disney logo" />
         <p>
           Suscribite al nivel 6 por solo
           <span>
