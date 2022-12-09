@@ -6,14 +6,20 @@ import { FaShippingFast, FaStar, FaUndo } from 'react-icons/fa';
 import { createCss } from '@utils';
 import { Float, Environment, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import royalEsplanade from "@assets/hdrs/royal_esplanade_1k.hdr";
+import autumForest from "@assets/hdrs/autumn_forest_04_1k.hdr";
+import ehingen from "@assets/hdrs/ehingen_hillside_1k.hdr";
+import parkParking from "@assets/hdrs/park_parking_1k.hdr";
+import studio from "@assets/hdrs/provence_studio_1k.hdr";
+
 const css = createCss(style);
 
 const Enviroments = {
-  1: 'royal_esplanade_1k.hdr',
-  2: 'hdrs/autumn_forest_04_1k.hdr',
-  3: 'hdrs/ehingen_hillside_1k.hdr',
-  4: 'hdrs/park_parking_1k.hdr',
-  5: 'hdrs/provence_studio_1k.hdr'
+  1: royalEsplanade,
+  2: autumForest,
+  3: ehingen,
+  4: parkParking,
+  5: studio
 };
 function BuyProduct3D() {
   const [activateBackground, setActivateBackground] = useState<boolean>(false);
