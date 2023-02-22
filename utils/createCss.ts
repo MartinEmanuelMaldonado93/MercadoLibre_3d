@@ -4,7 +4,7 @@
 type cssModule = {
     readonly [key: string]: string;
 };
-
+// literales(classesStr:TemplateStringsArray, ...value:string[])
 export function createCss(style: cssModule) {
     return (classesStr: string) => {
         const keys = classesStr.split(" ");
