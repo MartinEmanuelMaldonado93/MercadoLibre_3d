@@ -1,9 +1,9 @@
 # Conceptual project of Mercado Libre 
 
-This project was made with [Nextjs](https://nextjs.org) and deploy on [Vercel](https://vercel.com) 
+This project was made with [Webpack](https://webpack.js.org) and deploy on [Netlify](https://netlify.com)
 
 ## ✨ Features
-- Webpack
+- Webpack5
 - React
 - React-Three-Fiber
 - TypeScript
