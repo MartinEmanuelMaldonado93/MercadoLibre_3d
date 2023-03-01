@@ -2,8 +2,8 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import bikeScene from "@assets/models/americanmuscle/mountainbike/scene.gltf";
 
+const URL = "/models/americanmuscle/mountainbike/scene.gltf";
 type GLTFResult = GLTF & {
   nodes: {
     Cylinder_UV2_0: THREE.Mesh;
@@ -83,7 +83,8 @@ export default function MountainBike({
   ...props
 }: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useGLTF(bikeScene) as GLTFResult;
+  const { nodes, materials } = useGLTF(URL) as unknown as GLTFResult;
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
@@ -538,5 +539,4 @@ export default function MountainBike({
     </group>
   );
 }
-
-// useGLTF.preload('/models/americanmuscle/mountainbike/scene.gltf')
+useGLTF.preload(URL);

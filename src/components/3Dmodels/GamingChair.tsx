@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
+const URL = "/models/GamingChair/scene.gltf";
 type GLTFResult = GLTF & {
   nodes: {
     Object_2: THREE.Mesh;
@@ -26,9 +27,7 @@ export default function GamingChair({
   ...props
 }: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useGLTF(
-    "/models/americanmuscle/gamingchair/scene.gltf"
-  ) as GLTFResult;
+  const { nodes, materials } = useGLTF(URL) as unknown as GLTFResult;
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -57,3 +56,4 @@ export default function GamingChair({
     </group>
   );
 }
+useGLTF.preload(URL);

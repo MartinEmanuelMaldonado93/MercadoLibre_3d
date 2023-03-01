@@ -13,9 +13,6 @@ import SpinnerLoading from "../SpinerLoading/SpinnerLoading";
 const css = createCss(style);
 
 export default function Banner3D() {
-  console.log(
-    `Iphone ${Iphone13}, MountainBike ${MountainBike} GamingChair1 ${GamingChair1} `
-  );
 
   return (
     <div className={css("banner3D")}>
@@ -52,11 +49,11 @@ export default function Banner3D() {
                 speed={2.4}
               />
               <pointLight />
-              {/* <MountainBike
+              <MountainBike
                 position={[-0.3, -0.8, -2]}
                 rotation={[0, 10.08, 0]}
                 scale={1.5}
-              /> */}
+              />
               {/* <GamingChair1
                 position={[4, 1, 1.5]}
                 rotation={[0, -0.8, -0.07]}
