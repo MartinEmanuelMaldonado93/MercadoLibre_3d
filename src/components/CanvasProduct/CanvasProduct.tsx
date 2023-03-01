@@ -1,16 +1,15 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, Float } from "@react-three/drei";
 
 interface props {
-  fondo: string,
-  activarfondo: boolean,
-  children: React.ReactNode,
+  fondo: string;
+  activarfondo: boolean;
+  children: React.ReactNode;
 }
 function CanvasProduct({ fondo, activarfondo, children }: props) {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }} >
+    <Canvas camera={{ position: [0, 0, 10], fov: 50, near: 0.1, far: 500 }}>
       <ambientLight intensity={0.7} />
       <pointLight position={[-5, -5, -5]} intensity={4} />
       <pointLight position={[3, 3, -5]} />
@@ -21,10 +20,9 @@ function CanvasProduct({ fondo, activarfondo, children }: props) {
           rotation={[0.1, 0, 0]}
           rotationIntensity={3}
           floatIntensity={2}
-          speed={2} >
-
+          speed={2}
+        >
           {children}
-
         </Float>
       </Suspense>
 
@@ -34,7 +32,8 @@ function CanvasProduct({ fondo, activarfondo, children }: props) {
         maxDistance={16}
         enableDamping={true}
         enableZoom={true}
-        enablePan={false} />
+        enablePan={false}
+      />
     </Canvas>
   );
 }
