@@ -38,11 +38,10 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
-  const fixed_chair_url = chair_url.replace("models", "/models/");
+  // const fixed_chair_url = chair_url.replace("models", "/models/");
+  // console.log(fixed_chair_url)
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF(
-    fixed_chair_url
-  ) as unknown as GLTFResult;
+  const { nodes, materials } = useGLTF(chair_url) as unknown as GLTFResult;
 
   return (
     <group ref={group} {...props} dispose={null}>
