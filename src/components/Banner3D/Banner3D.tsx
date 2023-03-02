@@ -49,17 +49,17 @@ export default function Banner3D() {
                 speed={2.4}
               />
               <pointLight />
-              {/* <MountainBike
+              <MountainBike
                 position={[-0.3, -0.8, -2]}
                 rotation={[0, 10.08, 0]}
                 scale={1.5}
-              /> */}
+              />
               <GamingChair1
                 position={[4, 1, 1.5]}
                 rotation={[0, -0.8, -0.07]}
                 scale={0.25}
               />
-              {/* <Iphone13 position={[1, 2, 1]} rotation={[0, 0, 0]} scale={3} /> */}
+              <Iphone13 position={[1, 2, 1]} rotation={[0, 0, 0]} scale={3} />
 
               <Environment preset='forest' />
               <OrbitControls
