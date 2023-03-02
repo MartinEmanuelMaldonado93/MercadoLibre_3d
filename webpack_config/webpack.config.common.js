@@ -6,14 +6,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: {
-    meli_app: "../pages/index.tsx"
+    meli_app: "../pages/index.tsx",
   },
   output: {
     path: path.join(__dirname, "../build"),
     filename: "[name].[contenthash:8].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
-    publicPath: "/"
+    publicPath: "/",
   },
   context: path.resolve(__dirname),
   module: {
@@ -42,24 +42,30 @@ module.exports = {
             options: {
               //implementation: require("node-sass")//1.92s
               // implementation: require("sass-embedded") // 2.83s
-              implementation: require("sass") // 2.56s
-            }
-          }
-        ]
+              implementation: require("sass"), // 2.56s
+            },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg|bin|hdr)$/i,
         type: "asset/resource",
         generator: {
-          filename: 'assets/[hash][ext]'}
+          filename: "assets/[hash][ext]",
+        },
       },
       {
         test: /\.(gltf)$/,
-        use: [
-          {
-            loader: "gltf-loader"
-          }
-        ]
+        loader: "gltf-loader",
+        /**
+         * @type {import("gltf-loader").GLTFLoaderOptions}
+         */
+        options: {
+          filePath: "models",
+          inline: false,// as json data
+          // publicPath: ''
+        }
+        // options: { inline: true },
       },
     ],
   },
@@ -71,7 +77,7 @@ module.exports = {
       "@components": path.resolve(__dirname, "../src/components"),
       "@utils": path.resolve(__dirname, "../utils"),
       "@assets": path.resolve(__dirname, "../public"),
-    }
+    },
   },
   performance: {
     maxAssetSize: 500_000,

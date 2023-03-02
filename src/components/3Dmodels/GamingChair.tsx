@@ -26,7 +26,7 @@ type GLTFResult = GLTF & {
 export default function GamingChair({
   ...props
 }: JSX.IntrinsicElements["group"]) {
-  const group = useRef<THREE.Group>();
+  const group = useRef<THREE.Group>(null);
   const { nodes, materials } = useGLTF(URL) as unknown as GLTFResult;
   return (
     <group ref={group} {...props} dispose={null}>

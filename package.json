@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "webpack serve -c ./webpack_config/webpack.config.dev.js",
-    "build": "webpack -c ./webpack_config/webpack.config.prod.js"
+    "build": "webpack -c ./webpack_config/webpack.config.prod.js",
+    "serve": "node ./webpack_config/server.js"
   },
   "dependencies": {
+    "@vxna/gltf-loader": "^2.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.6.0",

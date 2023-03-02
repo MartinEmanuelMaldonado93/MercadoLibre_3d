@@ -11,30 +11,30 @@ import { createCss } from "@utils";
 import redShoes from "@assets/images/products/redshoes.jpg";
 import fakePromo from "@assets/images/fake_promo_large.png";
 import fakeFooter from "@assets/images/fake_footer.png";
-import style from "./Home.module.scss";
 import "@assets/logos/icomeli.png";
+import style from "./Home.module.scss";
 
 const css = createCss(style);
 function Home() {
   return (
     <div className={css("home")}>
-      <Navbar />
-      <Carousel />
-      <ContainerCardProduct>
+      {/* <Navbar /> */}
+      {/* <Carousel /> */}
+      {/* <ContainerCardProduct>
         <CardProduct
           imgUrl={redShoes}
           price={34000}
           freeShip={true}
           titleProd='John fool'
           description='Zapatillas John Fool Art 320 Hombre/Mujer Urbanas (34/45)'
-        />
-      </ContainerCardProduct>
-      <BannerSuscription />
-      <picture className={css("home__picture")}>
+        /> */}
+      {/* </ContainerCardProduct> */}
+      {/* <BannerSuscription /> */}
+      {/* <picture className={css("home__picture")}>
         <img loading='lazy' src={fakePromo} alt='promo_img' />
-      </picture>
+      </picture> */}
       <Banner3D />
-      <footer className={css("home__footer")}>
+      {/* <footer className={css("home__footer")}>
         <div className='home__footer--content'>
           <img src={fakeFooter} alt='false footer' />
           <p>
@@ -42,7 +42,7 @@ function Home() {
             fomentar nuevas ideas y productos dentro de la comunidad web**
           </p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

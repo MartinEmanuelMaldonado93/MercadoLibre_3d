@@ -60,7 +60,7 @@ type GLTFResult = GLTF & {
   };
 };
 export default function Iphone13({ ...props }: JSX.IntrinsicElements["group"]) {
-  const group = useRef<Group>();
+  const group = useRef<Group>(null);
   const { nodes, materials } = useGLTF(
     URL
   ) as unknown as GLTFResult;
