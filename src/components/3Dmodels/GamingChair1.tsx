@@ -3,9 +3,6 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import chair_url from "@assets/models/GamingChair/scene.gltf"; // as string
-import chair_url2 from "../../../public/models/GamingChair/scene.gltf"; // as string
-const URL = "/models/GamingChair/scene.gltf"; //relative to publicPath: '/' only dev!
-// modelsscene.61f6164f.gltf
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -38,8 +35,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
-  // const fixed_chair_url = chair_url.replace("models", "/models/");
-  // console.log(fixed_chair_url)
+  // const fixed_chair_url = chair_url.replace("models", "/models/"); //only dev 
   const group = useRef<THREE.Group>(null);
   const { nodes, materials } = useGLTF(chair_url) as unknown as GLTFResult;
 
@@ -195,4 +191,4 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
     </group>
   );
 }
-// useGLTF.preload(URL);
+useGLTF.preload(chair_url);
